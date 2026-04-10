@@ -1,0 +1,98 @@
+#sidebar {
+	padding: 20px;
+	background: #180529dd;
+	border-radius:20px;
+}
+
+.sidebarsection {
+	border: 1px solid #cf82e857;
+	padding: 9px;
+	font-size: 14px;
+}
+
+.title {
+	font-family: "Yatra One";
+	font-size: 18px;
+	color: #e29b31;
+	padding: 4px;
+	filter: drop-shadow(4px 4px 4px rgb(0, 0, 0, 0.46))
+}
+
+#quicklinks li {
+	padding: 5px;
+	margin: 5px;
+	list-style-type: none;
+	background: #350c5cCC
+}
+
+#quicklinks li:hover {
+	background: #9030b0;
+	color: #cf82e8;
+	filter: drop-shadow(4px 4px 4px rgb(0, 0, 0, 0.46))
+}
+
+#quicklinks a:link,
+a:visited,
+a:active {
+	color: #cf82e8;
+	font: 12px;
+	text-transform: uppercase;
+	line-height: 20px;
+	padding: 4px;
+	letter-spacing: 2px;
+	margin-right: 10px;
+	filter: drop-shadow(4px 4px 4px rgb(0, 0, 0, 0.46))
+}
+
+#quicklinks a:hover {
+	text-transform: uppercase;
+	line-height: 20px;
+	padding: 4px;
+	letter-spacing: 4px;
+	margin-right: 10px;
+	filter: drop-shadow(4px 4px 4px rgb(0, 0, 0, 0.46))
+}
+
+body {
+	font-family: Belleza;
+	font-size: 16px;
+	text-shadow: 0px 0px 1px #b3b3b3;
+	color: #be8dd4;
+	letter-spacing: 1px;
+}
+
+html, body{
+    padding: 0;
+    margin: 0;
+ }
+
+ /* Container that holds both elements */
+#contentwrap {
+    display: flex;
+    flex-wrap: wrap; /* Allows stacking on very small screens */
+    width: 65%;
+}
+
+/* Sidebar: 18% width but never smaller than 250px */
+#sidebar {
+    flex: 0 0 18%; 
+    min-width: 200px; /* Adjust this based on your widest button/image */
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+/* Content: Takes up the remaining 82% */
+#content {
+    flex: 1 1 82%; 
+    box-sizing: border-box;
+    padding: 20px;
+    min-width: 320px; /* Minimum width for mobile readability */
+}
+
+/* Media Query: Stack them vertically on mobile (phones) */
+@media (max-width: 768px) {
+    #sidebar, #content {
+        flex: 0 0 100%; /* Force both to full width */
+        width: 100%;
+    }
+}
