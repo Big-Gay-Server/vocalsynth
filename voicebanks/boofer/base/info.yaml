@@ -1,0 +1,21 @@
+vbname: Boofer
+vbsub: Currently Unreleased.
+vbdesc: 
+num: 1
+dllink: 
+keyartist: Megaa / MegasArts
+keyartistlink: https://megaslinks.carrd.co
+vbblurb: 
+
+subbanks:
+
+  - name: "base"
+    icondeco: 
+    iconface: "/voicebanks/boofer/base/icon.png"
+    desc: 
+    dllink:
+    expressions:
+      - name: "base"
+        type: "CVVC"
+        pitches: D3, G3, C4
+        demo: 

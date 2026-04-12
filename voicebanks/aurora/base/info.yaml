@@ -1,0 +1,21 @@
+vbname: Aurora
+vbsub: Currently Unreleased.
+vbdesc: 
+num: 1
+dllink: 
+keyartist: TGSLeo
+keyartistlink: https://bsky.app/profile/tgsleo.bsky.social
+vbblurb: 
+
+subbanks:
+
+  - name: "base"
+    icondeco: 
+    iconface: "/voicebanks/aurora/icon.png"
+    desc: 
+    dllink:
+    expressions:
+      - name: "base"
+        type: "CVVC"
+        pitches: 
+        demo: 

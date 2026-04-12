@@ -231,6 +231,13 @@ h6 {
 	filter: drop-shadow(4px 4px 4px rgb(0, 0, 0, 0.486))
 }
 
+#voicebanks {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* This creates a guaranteed physical gap between boxes */
+    margin-top: 40px; /* Optional: adds space between the <hr> and the first box */
+}
+
 .voicebankbox {
 	background-color: #1f033849;
 	border-radius: 20px;
@@ -239,7 +246,7 @@ h6 {
 	padding-left: 30px;
 	padding-right: 30px;
 	border: 1px solid #62a8d3;
-	filter: drop-shadow(4px 4px 4px rgb(0, 0, 0, 0.486))
+	filter: drop-shadow(4px 4px 4px rgb(0, 0, 0, 0.486));
 }
 
 .vbicon {
@@ -265,7 +272,7 @@ button {
 	line-height: 50px;
 	background: linear-gradient(90deg, #29007100 0%, #62a8d3 20%, #62a8d3 80%, #29007100 100%);
 	padding-top: 5px;
-	padding-bottom: 5x;
+	padding-bottom: 5px;
 	font-family: "Yatra One";
 	font-weight: bold;
 	color: #114696;

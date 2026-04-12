@@ -1,0 +1,28 @@
+vbname: Merisdae v2
+vbsub: Released in 2018.
+vbdesc: |
+  Transitionary voicebank, leading into Merisdae's newer format.<br>
+  1 released expression, with 5 CVVCV pitches. 
+num: 2
+keyartist: PRISMKidd
+keyartistlink: https://bsky.app/profile/prismkidd.bsky.social
+vbblurb: |
+    Thank you for your interest in Merisdae's v2 voicebank!<br><br>
+    This was a transitionary voicebank that was used in between v1 and her latest voicebanks, -NEW PHASE- ! It is more polished than her v1 voicebanks, but doesn't have the same range of appends.<br><br>
+    A good option for a solid, modern voicebank!<br><br>
+    Only -crescentmoon_japanese- was released to the public.
+dllink:
+subbanks:
+
+  - name: "crescentmoon"
+    icondeco: "/voicebanks/merisdae/crescentmoon icon.png"
+    iconface: "/voicebanks/merisdae/v2/crescentmoon icon.png"
+    desc: "A solid, core voicebank."
+    dllink:
+      - url: "https://drive.google.com/file/d/1CchSgpekmvPiwCAT6vOmUKHNPfRoB7yZ/view?usp=sharing"
+        type: "utau"
+    expressions:
+      - name: "japanese"
+        type: "CVVC + VCV"
+        pitches: "G3, C4, G4, B4"
+        demo: "/voicebanks/merisdae/v2/Merisdae -crescentmoon_japanese- v2.wav"

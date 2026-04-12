@@ -1,0 +1,37 @@
+vbname: Canelé -STARDUST-
+vbsub: Currently Unreleased.
+vbdesc: A multilanguage, multiexpression voicebank. 
+num: 2
+dllink:
+subbanks:
+  - [maritime]
+  - [seafoam]
+  - [abyss]
+keyartist: Moontikore
+keyartistlink: https://bsky.app/profile/moontikore.bsky.social
+vbblurb: |
+  <center>
+        Thank you for your interest in Canelé's -STARDUST- Voicebank Set!<br><br>
+        These voicebanks were designed for use in OpenUTAU but have been made backwards compatible to Classic
+        UTAU as well!<br><br>
+        For instructions on how to install Canelé -STARDUST- voicebanks, please see below!
+      </center><br>
+      <h3>How to install:</h3>
+      <h4>OpenUTAU</h4>
+      <ol>
+        <li>Click the download button with the OpenUTAU logo, and download the desired voicebank .zip
+          file from Google Drive.</li>
+        <li>Once downloaded, you can simply select "Install Singer..." from the "Tools" menu within
+          OpenUTAU.</li>
+        <li>From there, you can select the voicebank .zip file, and OpenUTAU will begin to import.</li>
+        <li>Archive File Encoding and Text File Encoding should both be set to "Japanese (Shift-JIS)".
+          Then, click "Install". Done!</li>
+      </ol>
+      <h4>UTAU</h4>
+      <ol>
+        <li>Click the download button with the UTAU logo, and download the desired voicebank .zip file
+          from Google Drive.</li>
+        <li>Once downloaded, you can simply drag and drop the voicebank .zip file into UTAU.</li>
+        <li>UTAU will confirm you would like to install the voicebank. Click "OK", and UTAU will install
+          the voicebank. Done!</li>
+      </ol>

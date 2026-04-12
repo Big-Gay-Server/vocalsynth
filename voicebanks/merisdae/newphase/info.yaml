@@ -1,0 +1,132 @@
+vbname: Merisdae -NEW PHASE-
+vbsub: Released in 2025.
+vbdesc: |
+  Merisdae's definitive voicebank set.<br>
+  Plans for 10+ multipitch CVVC expressions across 4 languages,<br>
+  as well as a DiffSinger release.
+num: 3
+dllink: 
+  - url: "/voicebanks/merisdae/newphase/downloads/Merisdae -NEW PHASE-.zip"
+    type: "openutau"
+  - url: "/voicebanks/merisdae/newphase/downloads/Merisdae -NEW PHASE- CLASSIC.zip"
+    type: "utau"
+keyartist: Maikory
+keyartistlink: https://x.com/MMaikory
+vbblurb: |
+  <center>
+			Thank you for your interest in Merisdae's -NEW PHASE- Voicebank Set!<br><br>
+			-NEW PHASE- is a collection of 5 voicebanks (crescentmoon, bloodmoon, bluemoon, fullmoon, and
+			newmoon) with a variety of expressions ranging from soft and sweet to mature and powerful. These
+			voicebanks were designed for use in OpenUTAU but have been made backwards compatible to Classic
+			UTAU as well!<br><br>
+			For instructions on how to install and use Merisdae -NEW PHASE- voicebanks, please see below!
+		</center><br>
+		<h3>How to install:</h3>
+		<h4>OpenUTAU</h4>
+		<ol>
+			<li>Click the download button with the OpenUTAU logo, and download the desired voicebank .zip
+				file.</li>
+			<li>Once downloaded, you can simply select "Install Singer..." from the "Tools" menu within
+				OpenUTAU.</li>
+			<li>From there, you can select the voicebank .zip file, and OpenUTAU will begin to import.</li>
+			<li>Archive File Encoding and Text File Encoding should both be set to "Japanese (Shift-JIS)".
+				Then, click "Install". Done!</li>
+		</ol>
+		<h4>UTAU</h4>
+		<ol>
+			<li>Click the download button with the UTAU logo, and download the desired voicebank .zip file.
+			</li>
+			<li>Once downloaded, you can simply drag and drop the voicebank .zip file into UTAU.</li>
+			<li>UTAU will confirm you would like to install the voicebank. Click "OK", and UTAU will install
+				the voicebank. Done!</li>
+		</ol>
+
+
+subbanks:
+
+  - name: "crescentmoon"
+    icondeco: "/voicebanks/merisdae/crescentmoon icon.png"
+    iconface: "/voicebanks/merisdae/newphase/crescentmoon icon.png"
+    desc: "a stable and consistent tone, with clear enunciation and good pitch accuracy.<br> suitable for a wide range of musical genres, from pop to rock to ballads."
+    dllink:
+      - url: "/voicebanks/merisdae/newphase/downloads/Merisdae -NEW PHASE- crescentmoon_JPN.zip"
+        type: "openutau"
+      - url: "/voicebanks/merisdae/newphase/downloads/Merisdae -NEW PHASE- crescentmoon_JPN CLASSIC.zip"
+        type: "utau"
+    expressions:
+      - name: "base"
+        type: "CVVC"
+        pitches: "A3, D4, G4, B4"
+        demo: "/voicebanks/merisdae/newphase/Export/haruka kanata_crescentmoon base.wav"
+      - name: "falsetto"
+        type: "CVVC"
+        pitches: "B4"
+        demo: 
+      - name: "vocal fry"
+        type: "V-"
+        pitches: "D4"
+        demo: "/voicebanks/merisdae/newphase/Export/haruka kanata_crescentmoon vocal fry.wav"
+
+  - name: "bloodmoon"
+    icondeco: "/voicebanks/merisdae/bloodmoon icon.png"
+    iconface: "/voicebanks/merisdae/newphase/bloodmoon icon.png"
+    desc: "a strong and forceful tone, with a lot of energy and intensity. It is ideal for genres<br>such as rock, metal, and electronic music that require power and presence."
+    dllink:
+      - url: "/voicebanks/merisdae/newphase/downloads/Merisdae -NEW PHASE- bloodmoon_JPN.zip"
+        type: "openutau"
+      - url: "/voicebanks/merisdae/newphase/downloads/Merisdae -NEW PHASE- bloodmoon_JPN CLASSIC.zip"
+        type: "utau"
+    expressions:
+      - name: "power"
+        type: "CVVC"
+        pitches: "D4, G4, B4, D5"
+        demo: "/voicebanks/merisdae/newphase/Export/haruka kanata_bloodmoon power.wav"
+      - name: "visual kei"
+        type: "CVVC"
+        pitches: "D4, B4"
+        demo: 
+
+  - name: "bluemoon"
+    icondeco: "/voicebanks/merisdae/bluemoon icon.png"
+    iconface: "/voicebanks/merisdae/newphase/bluemoon icon.png"
+    desc: "a gentle and airy tone, with a lot of breathiness and vulnerability. It is ideal for<br>ballads and slow-tempo songs that require a more delicate sound."
+    dllink:
+      - url: "/voicebanks/merisdae/newphase/downloads/Merisdae -NEW PHASE- bluemoon_JPN.zip"
+        type: "openutau"
+      - url: "/voicebanks/merisdae/newphase/downloads/Merisdae -NEW PHASE- bluemoon_JPN CLASSIC.zip"
+        type: "utau"
+    expressions:
+      - name: "soft"
+        type: "CVVC"
+        pitches: "A3, D4, G4, B4"
+        demo: "/voicebanks/merisdae/newphase/Export/haruka kanata_bluemoon soft.wav"
+      - name: "whisper"
+        type: "CVVC"
+        pitches: "--"
+        demo:
+
+  - name: "fullmoon"
+    icondeco: "/voicebanks/merisdae/fullmoon icon.png"
+    iconface: "/voicebanks/merisdae/newphase/fullmoon icon.png"
+    desc: "a rich and resonant tone with depth and maturity. It is suitable for genres such as<br>jazz, blues, and R&B that require a more soulful and mature sound."
+    dllink:
+    expressions:
+      - name: "mature"
+        type: "CVVC"
+        pitches: "A3, D4, G4"
+        demo: 
+
+  - name: "newmoon"
+    icondeco: "/voicebanks/merisdae/newmoon icon.png"
+    iconface: "/voicebanks/merisdae/newphase/newmoon icon.png"
+    desc: "a bright and cheerful tone, with a sweetness and innocence. It is ideal for genres<br>such as pop and anime music that require a more youthful and upbeat sound."
+    dllink:
+    expressions:
+      - name: "youthful"
+        type: "CVVC"
+        pitches: "D4, B4"
+        demo: 
+      - name: "creepy"
+        type: "CVVC"
+        pitches: "D4, B4"
+        demo: "/voicebanks/merisdae/newphase/Export/haruka kanata_newmoon creepy.wav"

@@ -1,0 +1,21 @@
+vbname: Ayda
+vbsub: Currently Unreleased.
+vbdesc: 
+num: 1
+dllink: 
+keyartist: Big Bite Art
+keyartistlink: https://bigbitelinks.carrd.co
+vbblurb: 
+
+subbanks:
+
+  - name: "base"
+    icondeco: 
+    iconface: "/voicebanks/ayda/icon 2.png"
+    desc: 
+    dllink:
+    expressions:
+      - name: "base"
+        type: "CVVC"
+        pitches: 
+        demo: 

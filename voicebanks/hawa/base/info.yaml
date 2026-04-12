@@ -1,0 +1,21 @@
+vbname: Hawa
+vbsub: Currently Unreleased.
+vbdesc: 
+num: 1
+dllink: 
+keyartist: Momo
+keyartistlink: https://bsky.app/profile/sicklymomo.bsky.social
+vbblurb: 
+
+subbanks:
+
+  - name: "base"
+    icondeco: 
+    iconface: "/voicebanks/hawa/base/icon.png"
+    desc: 
+    dllink:
+    expressions:
+      - name: "base"
+        type: "CVVC"
+        pitches:
+        demo: 
