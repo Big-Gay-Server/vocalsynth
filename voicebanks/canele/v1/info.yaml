@@ -2,3 +2,48 @@ vbname: Cici v1
 vbsub: Released in 2018.
 vbdesc: A multilanguage, multiexpression voicebank. 
 num: 1
+dllink:
+keyartist: TheAwkwardDork
+keyartistlink: https://theawkwarddork.carrd.co/
+vbblurb: |
+  <center>
+    Thank you for your interest in Cici's Classic v1 Voicebanks!<br><br>
+    Cici has 2 different banks!<br><br>
+    For instructions on how to use Cici v1 voicebanks, please see below!
+  <br>
+  <h3>How to use:</h3>
+  To use this bank, simply select the voice you would like to use in UTAU! If you want to
+  use any of the "all_" banks (which are packages of all of the appends for that language),
+  then you have to add suffixes for each append. The suffixes are as follows: <br><br>
+    <li>no suffix: -maritime- (Core, Natural Voicebank)</li>
+    <li>s: -seafoam- (Soft, Whispery Voicebank)</li>
+
+subbanks:
+
+  - name: "maritime"
+    icondeco: "/voicebanks/canele/maritime icon.png"
+    iconface: "/voicebanks/canele/v1/icon.jpg"
+    desc: |
+      an upbeat tone, bubbly and sweet with a hint of breathiness.<br>
+      suitable for a wide range of musical genres, from pop to rock to ballads.
+    dllink: 
+      - url: https://drive.google.com/file/d/1ZvOVBB1ljf0IH7VwQpv_8_DB-ztiL7n6/view?usp=drive_link
+        type: "utau"
+    expressions:
+      - name: "japanese"
+        type: "CVVC + VCV"
+        pitches: 
+        demo: ""
+
+  - name: "seafoam"
+    icondeco: "/voicebanks/canele/seafoam icon.png"
+    iconface: "/voicebanks/canele/v1/icon.jpg"
+    desc: "A soft, breathy append."
+    dllink:
+      - url: https://drive.google.com/file/d/1e2xhOaZ58AbjzPEm51_cmtv_RmDbFvol/view?usp=drive_link
+        type: "utau"
+    expressions:
+      - name: "japanese"
+        type: "CVVC + VCV"
+        pitches: 
+        demo: 

@@ -2,3 +2,74 @@ vbname: Yudora -CONSTELLATION-
 vbsub: Currently Unreleased.
 vbdesc: A multipitch, multiexpression voicebank.<br>3 expressions, with 3 CVVC pitches each. 
 num: 2
+dllink:
+keyartist: GoodnightAya
+keyartistlink: https://bsky.app/profile/goodnightaya.bsky.social
+vbblurb: |
+  <center>
+    Thank you for your interest in Yudora's -CONSTELLATION- Voicebank Set!<br><br>
+    -CONSTELLATION- is a collection of 3 voicebanks (starcore, nebula, and supernova) with a variety of expressions ranging from soft and sweet to solid and powerful. These
+    voicebanks were designed for use in OpenUTAU but have been made backwards compatible to Classic
+    UTAU as well!<br><br>
+    For instructions on how to install Yudora -CONSTELLATION- voicebanks, please see below!
+  </center><br>
+  <h3>How to install:</h3>
+  <h4>OpenUTAU</h4>
+  <ol>
+    <li>Click the download button with the OpenUTAU logo, and download the desired voicebank .zip
+      file from Google Drive.</li>
+    <li>Once downloaded, you can simply select "Install Singer..." from the "Tools" menu within
+      OpenUTAU.</li>
+    <li>From there, you can select the voicebank .zip file, and OpenUTAU will begin to import.</li>
+    <li>Archive File Encoding and Text File Encoding should both be set to "Japanese (Shift-JIS)".
+      Then, click "Install". Done!</li>
+  </ol>
+  <h4>UTAU</h4>
+  <ol>
+    <li>Click the download button with the UTAU logo, and download the desired voicebank .zip file
+      from Google Drive.</li>
+    <li>Once downloaded, you can simply drag and drop the voicebank .zip file into UTAU.</li>
+    <li>UTAU will confirm you would like to install the voicebank. Click "OK", and UTAU will install
+      the voicebank. Done!</li>
+  </ol>
+
+subbanks:
+
+  - name: "starcore"
+    icondeco: "/voicebanks/yudora/starcore icon.png"
+    iconface: "/voicebanks/yudora/constellation/starcore icon.png"
+    desc: |
+      a stable and consistent tone, with clear enunciation and good pitch accuracy.<br>
+      suitable for a wide range of musical genres, from pop to rock to ballads.
+    dllink: 
+    expressions:
+      - name: "japanese"
+        type: "CVVC"
+        pitches: A3, D4, G4
+        demo: 
+
+  - name: "nebula"
+    icondeco: "/voicebanks/yudora/nebula icon.png"
+    iconface: "/voicebanks/yudora/constellation/nebula icon.png"
+    desc: |
+      a gentle and airy tone, with a lot of breathiness and vulnerability. It is ideal for <br>
+      ballads and slow-tempo songs that require a more delicate sound.
+    dllink:
+    expressions:
+      - name: "soft"
+        type: "CVVC"
+        pitches: A3, D4, G4
+        demo: 
+
+  - name: "supernova"
+    icondeco: "/voicebanks/yudora/supernova icon.png"
+    iconface: "/voicebanks/yudora/constellation/supernova icon.png"
+    desc: |
+      a strong and forceful tone, with a lot of energy and intensity. It is ideal for genres<br>
+      such as rock, metal, and electronic music that require power and presence.
+    dllink:
+    expressions:
+      - name: "power"
+        type: "CVVC"
+        pitches: A3, D4, G4
+        demo: 

@@ -53,24 +53,26 @@ if ($charaName) {
 
 			// main download buttons
 			if ($currentvb['dllink']) {
+				echo "<div class='center row' style='display: flex; justify-content: center; gap: 20px;'>";
 				foreach ($currentvb['dllink'] as $dl) {
 					?>
-				<div class="center row">
+				
 					<div class="column flex33">
 						<a href="<?= htmlspecialchars($dl['url']) ?>">
 							<img src="/_assets/<?= htmlspecialchars($dl['type']) ?> dl.png" class="columnimg">
 						</a>
 					</div>
-				</div>
+				
 				<?php
 				}
+				echo '</div>';
 			}
 			echo '<hr><br>';
 
 			// subbanks list
 			foreach ($currentvb['subbanks'] as $sub) {
 				?>
-				<div class="center row">
+				<div class="center row" style="display: flex; justify-content: center; gap: 20px;">
 					<div class="column flex10"><br><img src="<?= $sub['icondeco'] ?>" class="columnimg"></div>
 					<div class="column flex80">
 						<h2>-<?= $sub['name'] ?>-</h2>
@@ -78,22 +80,23 @@ if ($charaName) {
 					</div>
 					<div class="column flex10"><br><img src="<?= $sub['icondeco'] ?>" class="columnimg"></div>
 				</div>
-				<div class="center row">
+				<div class="center row" style="display: flex; justify-content: center; gap: 20px;">
+					<?php if (!empty($sub['dllink']) && is_array($sub['dllink'])):
+						foreach ($sub['dllink'] as $dl): ?>
 					<div class="column flex33">
-						<?php if (!empty($sub['dllink']) && is_array($sub['dllink'])):
-							foreach ($sub['dllink'] as $dl): ?>
-						<a href="<?= htmlspecialchars($dl['url']) ?>">
-							<img src="/_assets/<?= htmlspecialchars($dl['type']) ?> dl.png" class="columnimg">
-						</a>
-						<?php
-							endforeach;
-						endif;
-						?>
+					<a href="<?= htmlspecialchars($dl['url']) ?>">
+						<img src="/_assets/<?= htmlspecialchars($dl['type']) ?> dl.png" class="columnimg">
+					</a>
 					</div>
+					<?php
+						endforeach;
+					endif;
+					?>
+					
 				</div>
 				<br>
 				<div id="<?= $sub['name'] ?>box" class="voicebankbox">
-					<div class="row">
+					<div class="row" style="display: flex; justify-content: center; gap: 20px;">
 						<img src="<?= $sub['iconface'] ?>" class="vbicon column columnimg">
 						<div class="column centervertical">
 							<?php

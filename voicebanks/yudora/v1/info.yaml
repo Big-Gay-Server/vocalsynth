@@ -2,3 +2,61 @@ vbname: Yudora v1
 vbsub: Released in 2018.
 vbdesc: Yudora's debut voicebank.<br>3 expressions, with 1 CVVC pitch each. 
 num: 2
+dllink:
+keyartist: Momo
+keyartistlink: https://bsky.app/profile/sicklymomo.bsky.social
+vbblurb: |
+  <center>
+    Thank you for your interest in Yudora's Classic v1 Voicebanks!<br><br>
+    Yudora has 3 different banks!<br><br>
+    For instructions on how to use Yudora v1 voicebanks, please see below!
+  <br>
+  <h3>How to use:</h3>
+  To use this bank, simply select the voice you would like to use in UTAU! If you want to
+  use any of the "all_" banks (which are packages of all of the appends for that language),
+  then you have to add suffixes for each append. The suffixes are as follows: <br><br>
+    <li>no suffix: -starcore- (Core, Natural Voicebank)</li>
+    <li> S: -supernova- (Strong, Powerful Voicebank)</li>
+    <li> N: -nebula- (Soft, Whispery Voicebank)</li>
+
+subbanks:
+
+  - name: "starcore"
+    icondeco: "/voicebanks/yudora/starcore icon.png"
+    iconface: "/voicebanks/yudora/v1/starcore icon.png"
+    desc: |
+      A solid, core append.
+    dllink: 
+      - url: https://drive.google.com/file/d/1ZvOVBB1ljf0IH7VwQpv_8_DB-ztiL7n6/view?usp=drive_link
+        type: "utau"
+    expressions:
+      - name: "japanese"
+        type: "CVVC + VCV"
+        pitches: 
+        demo: ""
+
+  - name: "nebula"
+    icondeco: "/voicebanks/yudora/nebula icon.png"
+    iconface: "/voicebanks/yudora/v1/nebula icon.png"
+    desc: "A soft, breathy append."
+    dllink:
+      - url: https://drive.google.com/file/d/1e2xhOaZ58AbjzPEm51_cmtv_RmDbFvol/view?usp=drive_link
+        type: "utau"
+    expressions:
+      - name: "japanese"
+        type: "CVVC + VCV"
+        pitches: 
+        demo: 
+
+  - name: "supernova"
+    icondeco: "/voicebanks/yudora/supernova icon.png"
+    iconface: "/voicebanks/yudora/v1/supernova icon.png"
+    desc: "A strong, powerful append."
+    dllink:
+      - url: https://drive.google.com/file/d/1TBwfJpKlkz5KCvcaXP_jxYltMnbvtN5L/view?usp=drive_link
+        type: "utau"
+    expressions:
+      - name: "japanese"
+        type: "CVVC + VCV"
+        pitches: 
+        demo: 

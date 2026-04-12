@@ -1,4 +1,94 @@
 vbname: Merisdae v1
 vbsub: Released in 2016.
-vbdesc: Merisdae's debut voicebank.<br> 5 expressions, with 5 CVVC pitches each. 
+vbdesc: |
+  Merisdae's debut voicebank.<br>
+  5 expressions, with 5 CVVC pitches each. 
 num: 1
+keyartist: Cromet
+keyartistlink: https://bsky.app/profile/crotchcomet.bsky.social
+vbblurb: |
+  <center>
+    <img src="logo.png" width="100%"><br><br>
+    Thank you for your interest in Merisdae's Classic v1 Voicebanks!<br><br>
+    Merisdae has 5 different banks, each named after a phase of the moon.
+    Each bank has multiple languages in it, in multiple pitches!
+    The pitches are G3, C4, G4, B4, and D5.<br><br>
+    For instructions on how to use Merisdae v1 voicebanks, please see below!
+  </center><br>
+  <h3>How to use:</h3>
+  To use this bank, simply select the voice you would like to use in UTAU! If you want to
+  use any of the "all_" banks (which are packages of all of the appends for that language),
+  then you have to add suffixes for each append. The suffixes are as follows:
+  <ol>
+    <li>no suffix: -crescentmoon- (Core, Natural Voicebank)</li>
+    <li>_p: -bloodmoon- (Strong, Powerful Voicebank)</li>
+    <li>_s: -bluemoon- (Soft, Whispery Voicebank)</li>
+    <li>_f: -fullmoon- (Deeper, Mature Voicebank)</li>
+    <li>_n: -newmoon- (Cute, Childish Voicebank)</li>
+  </ol>
+dllink:
+subbanks:
+  - name: "crescentmoon"
+    icondeco: "/voicebanks/merisdae/crescentmoon icon.png"
+    iconface: "/voicebanks/merisdae/v1/crescentmoon icon.png"
+    desc: "A solid, core append."
+    dllink:
+      - url: "https://drive.google.com/file/d/1ClmDrbJiWOyN5VPumL36_za7w3LQucWU/view?usp=sharing"
+        type: "utau"
+    expressions:
+      - name: "japanese"
+        type: "CVVC"
+        pitches: "G3, C4, G4, B4, D5"
+        demo: "/voicebanks/merisdae/v1/Merisdae -crescentmoon_japanese- v1.wav"
+      - name: "english"
+        type: "CVVC"
+        pitches: "G3, C4, B4"
+        demo: "/voicebanks/merisdae/v1/Merisdae -crescentmoon_english- v1.wav"  
+
+  - name: "bloodmoon"
+    icondeco: "/voicebanks/merisdae/bloodmoon icon.png"
+    iconface: "/voicebanks/merisdae/v1/bloodmoon icon.png"
+    desc: "A strong, powerful append."
+    dllink:
+      - url: "https://drive.google.com/file/d/1XbhLTUylsYkMTb7QQ-JHzGNWCjcEmRLr/view?usp=sharing"
+        type: "utau"
+    expressions:
+      - name: "japanese"
+        type: "CVVC"
+        pitches: "G3, C4, G4, B4, D5"
+        demo: "/voicebanks/merisdae/v1/Merisdae -bloodmoon_japanese- v1.wav"
+
+  - name: "bluemoon"
+    icondeco: "/voicebanks/merisdae/bluemoon icon.png"
+    iconface: "/voicebanks/merisdae/v1/bluemoon icon.png"
+    desc: "A soft, breathy append."
+    dllink:
+      - url: "https://drive.google.com/file/d/1UJRKs0gjt2DjstWJ6w0IRDdJ25SAsdl8/view?usp=sharing"
+        type: "utau"
+    expressions:
+      - name: "japanese"
+        type: "CVVC"
+        pitches: "G3, C4, G4, B4, D5"
+        demo: "/voicebanks/merisdae/v1/Merisdae -bluemoon_japanese- v1.wav"
+
+  - name: "fullmoon"
+    icondeco: "/voicebanks/merisdae/fullmoon icon.png"
+    iconface: "/voicebanks/merisdae/v1/fullmoon icon.png"
+    desc: "A deep, mature append."
+    dllink:
+    expressions:
+      - name: "japanese"
+        type: "CVVC"
+        pitches: "G3, C4, G4, B4, D5"
+        demo: "/voicebanks/merisdae/v1/Merisdae -fullmoon_japanese- v1.wav"
+
+  - name: "newmoon"
+    icondeco: "/voicebanks/merisdae/newmoon icon.png"
+    iconface: "/voicebanks/merisdae/v1/newmoon icon.png"
+    desc: "A sweet, childish append."
+    dllink:
+    expressions:
+      - name: "japanese"
+        type: "CVVC"
+        pitches: "G3, C4, G4, B4, D5"
+        demo: "/voicebanks/merisdae/v1/Merisdae -newmoon_japanese- v1.wav"

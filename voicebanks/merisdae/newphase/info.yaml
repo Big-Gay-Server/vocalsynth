@@ -14,32 +14,32 @@ keyartist: Maikory
 keyartistlink: https://x.com/MMaikory
 vbblurb: |
   <center>
-			Thank you for your interest in Merisdae's -NEW PHASE- Voicebank Set!<br><br>
-			-NEW PHASE- is a collection of 5 voicebanks (crescentmoon, bloodmoon, bluemoon, fullmoon, and
-			newmoon) with a variety of expressions ranging from soft and sweet to mature and powerful. These
-			voicebanks were designed for use in OpenUTAU but have been made backwards compatible to Classic
-			UTAU as well!<br><br>
-			For instructions on how to install and use Merisdae -NEW PHASE- voicebanks, please see below!
-		</center><br>
-		<h3>How to install:</h3>
-		<h4>OpenUTAU</h4>
-		<ol>
-			<li>Click the download button with the OpenUTAU logo, and download the desired voicebank .zip
-				file.</li>
-			<li>Once downloaded, you can simply select "Install Singer..." from the "Tools" menu within
-				OpenUTAU.</li>
-			<li>From there, you can select the voicebank .zip file, and OpenUTAU will begin to import.</li>
-			<li>Archive File Encoding and Text File Encoding should both be set to "Japanese (Shift-JIS)".
-				Then, click "Install". Done!</li>
-		</ol>
-		<h4>UTAU</h4>
-		<ol>
-			<li>Click the download button with the UTAU logo, and download the desired voicebank .zip file.
-			</li>
-			<li>Once downloaded, you can simply drag and drop the voicebank .zip file into UTAU.</li>
-			<li>UTAU will confirm you would like to install the voicebank. Click "OK", and UTAU will install
-				the voicebank. Done!</li>
-		</ol>
+    Thank you for your interest in Merisdae's -NEW PHASE- Voicebank Set!<br><br>
+    -NEW PHASE- is a collection of 5 voicebanks (crescentmoon, bloodmoon, bluemoon, fullmoon, and
+    newmoon) with a variety of expressions ranging from soft and sweet to mature and powerful. These
+    voicebanks were designed for use in OpenUTAU but have been made backwards compatible to Classic
+    UTAU as well!<br><br>
+    For instructions on how to install and use Merisdae -NEW PHASE- voicebanks, please see below!
+  </center><br>
+  <h3>How to install:</h3>
+  <h4>OpenUTAU</h4>
+  <ol>
+    <li>Click the download button with the OpenUTAU logo, and download the desired voicebank .zip
+      file.</li>
+    <li>Once downloaded, you can simply select "Install Singer..." from the "Tools" menu within
+      OpenUTAU.</li>
+    <li>From there, you can select the voicebank .zip file, and OpenUTAU will begin to import.</li>
+    <li>Archive File Encoding and Text File Encoding should both be set to "Japanese (Shift-JIS)".
+      Then, click "Install". Done!</li>
+  </ol>
+  <h4>UTAU</h4>
+  <ol>
+    <li>Click the download button with the UTAU logo, and download the desired voicebank .zip file.
+    </li>
+    <li>Once downloaded, you can simply drag and drop the voicebank .zip file into UTAU.</li>
+    <li>UTAU will confirm you would like to install the voicebank. Click "OK", and UTAU will install
+      the voicebank. Done!</li>
+  </ol>
 
 
 subbanks:

@@ -212,17 +212,29 @@ h6 {
 	display: flex;
 	flex-direction: row;
 	width: 100%;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .column {
 	background-size: cover;
 	background-position: center top;
-	padding: 10px
+	padding: 10px;
 }
 
 .columnimg {
-	object-fit: cover;
-	width: 100%;
+	display: block;  
+    margin: auto;    
+    max-width: 100%;
+    height: auto;
+}
+
+.center {
+	text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 #bio b {
@@ -259,10 +271,7 @@ h6 {
 	height: 20%;
 }
 
-.center {
-	text-align: center;
-	margin: auto
-}
+
 
 button {
 	padding-left: 60px;
@@ -309,7 +318,8 @@ button:hover {
 }
 
 .flex33 {
-	flex: 33%
+    flex: 0 1 auto;
+    max-width: 33%;
 }
 
 .flex10 {

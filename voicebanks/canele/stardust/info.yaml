@@ -3,10 +3,6 @@ vbsub: Currently Unreleased.
 vbdesc: A multilanguage, multiexpression voicebank. 
 num: 2
 dllink:
-subbanks:
-  - [maritime]
-  - [seafoam]
-  - [abyss]
 keyartist: Moontikore
 keyartistlink: https://bsky.app/profile/moontikore.bsky.social
 vbblurb: |
@@ -35,3 +31,40 @@ vbblurb: |
         <li>UTAU will confirm you would like to install the voicebank. Click "OK", and UTAU will install
           the voicebank. Done!</li>
       </ol>
+
+subbanks:
+
+  - name: "maritime"
+    icondeco: "/voicebanks/canele/maritime icon.png"
+    iconface: "/voicebanks/canele/stardust/icon.png"
+    desc: |
+      an upbeat tone, bubbly and sweet with a hint of breathiness.<br>
+      suitable for a wide range of musical genres, from pop to rock to ballads.
+    dllink: 
+    expressions:
+      - name: "base"
+        type: "CVVC"
+        pitches: 
+        demo: "/voicebanks/canele/stardust/Export/haruka kanata_stardust maritime.wav"
+
+  - name: "seafoam"
+    icondeco: "/voicebanks/canele/seafoam icon.png"
+    iconface: "/voicebanks/canele/stardust/icon.png"
+    desc: "a softer tone, airy and breathy."
+    dllink:
+    expressions:
+      - name: "soft"
+        type: "CVVC"
+        pitches: 
+        demo: "/voicebanks/canele/stardust/Export/haruka kanata_stardust seafoam.wav"
+
+  - name: "abyss"
+    icondeco: "/voicebanks/canele/abyss icon.png"
+    iconface: "/voicebanks/canele/stardust/icon.png"
+    desc: "a strong and powerful tone."
+    dllink:
+    expressions:
+      - name: "power"
+        type: "CVVC"
+        pitches: 
+        demo: "/voicebanks/canele/stardust/Export/haruka kanata_stardust abyss.wav"
