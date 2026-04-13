@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../../../apps/nginx"
+		},
+		{
+			"path": "../../../hdd1/Vocalsynth/UTAU/My USTs"
 		}
 	],
 	"settings": {}
