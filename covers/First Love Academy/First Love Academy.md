@@ -1,0 +1,54 @@
+---
+listen: "* -  LISTEN  - *"
+status: finished
+sub-status:
+  - audio posted
+Year: "2013"
+date: August 4, 2013
+upload date: 2013-08-04
+comments: comments comments
+song name: First Love Academy
+orig name: First Love Academy
+en/rom name: First Love Academy
+assign singers?: false
+audio link: https://soundcloud.com/khdahunter/first-love-academy-school-of
+SHOW PROMO?: false
+title: 【UTAU カバー】 First Love Academy 【】
+description: |-
+  ""
+
+  comments comments
+
+  ⦅ CREDITS ⦆
+
+  ⟡ SONG: First Love Academy
+  ⟡ MUSIC & LYRICS: 
+  ⟡ ORIGINAL: 
+  ⟡ UTAU: Tsuki Hikari ACT 3, Kuro Hikari
+  ⟡ UST: 
+  ⟡ TUNING: 
+  ⟡ MIX: 
+  ⟡ ILLUST: 
+  ⟡ MOVIE: 
+
+  ⦅ LINKS ⦆
+
+  ⟡ ORIGINAL VIDEO: 
+  ⟡ AUDIO UPLOAD: https://soundcloud.com/khdahunter/first-love-academy-school-of
+  ⟡ VIDEO UPLOAD: 
+
+  ⦅ WHERE TO FIND ME ⦆
+
+  ⟡ WEBSITE: http://lunarconstruct.net
+  ⟡ JOIN THE DISCORD: https://discord.gg/JfDRK8C6Rj
+  ⟡ BLUESKY: https://bsky.app/profile/lunarconstruct.net
+  ⟡ UTAFORUM: https://utaforum.net/members/lunarconstruct.2887/
+  ⟡ VOCADB: https://vocadb.net/Ar/43235
+bsky: hidden
+discord server post: hidden
+discord promo: hidden
+tumblr post: hidden
+voicebank:
+  - Tsuki Hikari ACT 3
+  - Kuro Hikari
+---

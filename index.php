@@ -16,4 +16,4 @@ Thanks for stopping by!!!
 <h2>Latest Cover</h2>
 <div class="video-container">
     <iframe src="https://www.youtube.com/embed/videoseries?si=cqykjJYWaY8li2Pn&amp;list=PLzANTVXMuQ2sbA32E95EdyQS9mb0UEC03" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
+</div>

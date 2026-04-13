@@ -1,0 +1,251 @@
+{
+  "main": {
+    "id": "878db4c41885f366",
+    "type": "split",
+    "children": [
+      {
+        "id": "473ffbadf5c3148e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0c0e9e3b95d3a52c",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "___covers.base",
+                "viewName": "Table"
+              },
+              "pinned": true,
+              "icon": "lucide-table",
+              "title": "___covers"
+            }
+          },
+          {
+            "id": "c5eb3f8b55b91002",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "___covers.base",
+                "viewName": "Table"
+              },
+              "icon": "lucide-table",
+              "title": "___covers"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f735ec8ac55526ab",
+    "type": "split",
+    "children": [
+      {
+        "id": "02b48581b76463e9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0bf5cd65a4e6eb16",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "c5872b65cfa49f97",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "f23e591fc031b731",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "45e65b131066aeab",
+    "type": "split",
+    "children": [
+      {
+        "id": "56c1711a4cfa18d2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d0c4faf7c933ab69",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "___covers.base",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for ___covers"
+            }
+          },
+          {
+            "id": "3a5dc2f0ccd3501b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "___covers.base",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from ___covers"
+            }
+          },
+          {
+            "id": "7a140b0de4900647",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "847aa875af4531d4",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "c1deb33fa9421181",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "___covers.base",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of ___covers"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-importer:Open Importer": false
+    }
+  },
+  "active": "0bf5cd65a4e6eb16",
+  "lastOpenFiles": [
+    "メズマライザー - Mesmerizer/mesmerizer.jpg",
+    "World is Mine/IMG_3566.png",
+    "___covers.base",
+    "ダーリン - Darling/image_2023-02-03_235654961.png",
+    "Vanilla Twilight/image_2023-02-03_235246304.png",
+    "Beyond the Way/image 22.png",
+    "Beyond the Way/image 17.png",
+    "イガク - Igaku/image 16.png",
+    "イガク - Igaku/image 15.png",
+    "Something Comforting/hqdefault.jpg",
+    "イヤガール - Hate-Girl/hategirl_w_words.png",
+    "イガク - Igaku/for_u.png",
+    "メズマライザー - Mesmerizer/Comp_1 1.mp4",
+    "モニタリング - Monitoring/Comp_1.mp4",
+    "魔法少女とチョコレゐト - Magical Girl and Chocolate/魔法少女とチョコレゐト - Magical Girl and Chocolate.md",
+    "魔法少女とチョコレゐト - Magical Girl and Chocolate",
+    "馬鹿 - Moron/馬鹿 - Moron.md",
+    "馬鹿 - Moron",
+    "阿吽のビーツ - Aum Beats/阿吽のビーツ - Aum Beats.md",
+    "阿吽のビーツ - Aum Beats",
+    "鐘泣く命 - Kane Naku Inochi/鐘泣く命 - Kane Naku Inochi.md",
+    "鐘泣く命 - Kane Naku Inochi",
+    "運命 - Destiny/運命 - Destiny.md",
+    "運命 - Destiny",
+    "赤ペンおねがいします - Please Give Me a Red Pen/赤ペンおねがいします - Please Give Me a Red Pen.md",
+    "赤ペンおねがいします - Please Give Me a Red Pen",
+    "言って。 - Say it/言って。 - Say it.md",
+    "言って。 - Say it",
+    "裏表ラバーズ - Two-Faced Lovers/裏表ラバーズ - Two-Faced Lovers.md",
+    "蛍はいなかった - Fireflies Never Came/蛍はいなかった - Fireflies Never Came.md",
+    "華蕾夢ミル狂詩曲〜魂ノ導〜 - Tsubomi Yumemiru Rhapsodia ~Alma no Michibiki~/華蕾夢ミル狂詩曲〜魂ノ導〜 - Tsubomi Yumemiru Rhapsodia ~Alma no Michibiki~.md",
+    "耳のあるロボットの唄 - Song of Eared Robot/耳のあるロボットの唄 - Song of Eared Robot.md",
+    "積み木の人形 - Tsumiki no Ningyou/積み木の人形 - Tsumiki no Ningyou.md",
+    "私は雨 - I am the Rain/私は雨 - I am the Rain.md",
+    "私の恋はヘルファイア - My Love is Hellfire/私の恋はヘルファイア - My Love is Hellfire.md",
+    "神っぽいな - God-ish/神っぽいな - God-ish.md",
+    "祈りの花 - Inori no Hana/祈りの花 - Inori no Hana.md",
+    "着火er - Igniter/着火er - Igniter.md",
+    "百花繚乱 - A Sea of Lanterns/百花繚乱 - A Sea of Lanterns.md",
+    "病名は愛だった - The Disease Called Love/病名は愛だった - The Disease Called Love.md",
+    "爆笑 - Bakushou/爆笑 - Bakushou.md",
+    "熱異常 - Heat Abnormal/熱異常 - Heat Abnormal.md",
+    "海の幽霊 - Spirits of the Sea/海の幽霊 - Spirits of the Sea.md",
+    "泥中に咲く - Blooming into the Mud/泥中に咲く - Blooming into the Mud.md",
+    "曲名 - song name.md",
+    "日常と地球の額縁 - Nichijou to Chikyuu no Gakubuchi/日常と地球の額縁 - Nichijou to Chikyuu no Gakubuchi.md"
+  ]
+}

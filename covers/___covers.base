@@ -1,0 +1,120 @@
+formulas:
+  song name concat: |-
+    if(note["en/rom name"] == note["orig name"], note["orig name"], (
+    note["orig name"] + " / " + note["en/rom name"]))
+  sort date: |
+    date(if(
+    note["upload date"],note["upload date"],
+    if(note["estm upload date"], note["estm upload date"], note["date"])))
+properties:
+  formula.song name concat:
+    displayName: song name
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.ext == "md"
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - emoji
+      - file.name
+      - formula.song name concat
+      - voicebank
+      - lyric for desc
+      - comments
+      - formula.sort date
+      - Year
+      - featured
+      - guest voicebanks
+      - Files & media
+      - for?
+      - music & lyrics
+      - original vocals
+      - original video
+      - mix
+      - UST
+      - tuning
+      - UST page
+      - illust
+      - movie
+      - status
+      - sub-status
+      - tags
+      - audio link
+      - video link
+    sort:
+      - property: formula.sort date
+        direction: DESC
+    summaries: {}
+    columnSize:
+      note.emoji: -9
+      file.name: 36
+      formula.song name concat: 230
+      note.voicebank: 189
+      note.comments: 146
+      formula.sort date: 99
+      note.featured: 154
+      note.guest voicebanks: 85
+      note.Files & media: 50
+      note.for?: 74
+      note.music & lyrics: 122
+      note.original vocals: 114
+      note.original video: 16
+      note.UST: 114
+      note.UST page: -83
+      note.illust: 111
+      note.movie: 127
+      note.sub-status: 109
+      note.tags: 121
+      note.audio link: 15
+      note.video link: -124
+  - type: cards
+    name: cards
+    filters:
+      and:
+        - file.ext == "md"
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - formula.song name concat
+      - lyric for desc
+      - voicebank
+      - comments
+      - formula.sort date
+      - Year
+      - for?
+      - sub-status
+      - tags
+    sort:
+      - property: formula.sort date
+        direction: DESC
+    summaries: {}
+    columnSize:
+      note.emoji: -9
+      file.name: 36
+      formula.song name concat: 230
+      note.voicebank: 189
+      note.comments: 146
+      formula.sort date: 99
+      note.featured: 431
+      note.guest voicebanks: 85
+      note.Files & media: 50
+      note.for?: 74
+      note.music & lyrics: 122
+      note.original vocals: 114
+      note.original video: 16
+      note.UST: 114
+      note.UST page: -83
+      note.illust: 111
+      note.movie: 127
+      note.sub-status: 109
+      note.tags: 121
+      note.audio link: 15
+      note.video link: -124
+    image: note.Files & media
+    cardSize: 210
+    imageAspectRatio: 0.55
