@@ -13,11 +13,11 @@
             "state": {
               "type": "bases",
               "state": {
-                "file": "Untitled.base",
-                "viewName": "Table"
+                "file": "covers/___covers.base",
+                "viewName": "web"
               },
               "icon": "lucide-table",
-              "title": "Untitled"
+              "title": "___covers"
             }
           }
         ]
@@ -177,13 +177,42 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-importer:Open Importer": false
     }
   },
   "active": "2b992776e4930e47",
   "lastOpenFiles": [
-    "usts/index.php",
-    "Untitled.base",
-    "voicebanks/Untitled.base"
+    "covers/take2.php",
+    "covers/神っぽいな - God-ish/thumb 2.png",
+    "composer.phar",
+    "composer.lock",
+    "composer.json",
+    "vendor/symfony/var-exporter/composer.json",
+    "vendor/symfony/var-exporter/VarExporter.php",
+    "vendor/symfony/var-exporter/README.md",
+    "vendor/symfony/var-exporter/ProxyHelper.php",
+    "vendor/symfony/var-exporter/LazyProxyTrait.php",
+    "vendor/symfony/var-exporter/LazyObjectInterface.php",
+    "vendor/symfony/var-exporter/LazyGhostTrait.php",
+    "vendor/symfony/var-exporter/LICENSE",
+    "vendor/symfony/var-exporter/CHANGELOG.md",
+    "vendor/symfony/service-contracts/README.md",
+    "vendor/symfony/service-contracts/CHANGELOG.md",
+    "vendor/symfony/expression-language/README.md",
+    "vendor/symfony/expression-language/CHANGELOG.md",
+    "vendor/symfony/deprecation-contracts/README.md",
+    "vendor/symfony/deprecation-contracts/CHANGELOG.md",
+    "vendor/symfony/cache-contracts/README.md",
+    "vendor/symfony/cache-contracts/CHANGELOG.md",
+    "vendor/symfony/cache/README.md",
+    "vendor/symfony/cache/CHANGELOG.md",
+    "vendor/psr/log/README.md",
+    "vendor/psr/container/README.md",
+    "vendor/psr/cache/README.md",
+    "vendor/psr/cache/CHANGELOG.md",
+    "vendor/mustangostang/spyc/README.md",
+    "vendor/erusev/parsedown/README.md",
+    "covers/ラッグトレイン - Lagtrain/ラッグトレイン - Lagtrain.md"
   ]
 }

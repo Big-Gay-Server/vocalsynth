@@ -32,7 +32,7 @@ UST page:
   - https://www.notion.so/lilac-time-e5411972f7ef4c81943d995f4ad928d7?pvs=21
 SHOW PROMO?: false
 title: 【UTAU カバー】 lilac time 【】+USTx
-description: |-
+description: >-
   "I want to be smiling like myself at any time"
 
   Aaaand she's done! Boy this has taken muuuch longer than I had originally anticipated, but here she is! Originally I planned to release her sometime in January or February, but I got sick and lost my voice for a good chunk of it and couldn't record until March or so. Since then it's just been cleaning her up and preparing her for release! I did end up cutting the pitches down to 4 instead of 5, my voice just wasn't able to hit as high of a note as it was before unfortunately... I also didn't want to keep the release waiting any longer when I had pretty much everything else done! Maybe in the future I can release an update with the higher pitch :)

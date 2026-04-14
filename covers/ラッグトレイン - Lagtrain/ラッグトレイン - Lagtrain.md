@@ -58,5 +58,5 @@ discord server post: hidden
 discord promo: hidden
 tumblr post: hidden
 voicebank:
-  - Canelé -STARDUST-
+  - "[[voicebanks/canele/stardust/info.yaml|Canelé -STARDUST-]]"
 ---
