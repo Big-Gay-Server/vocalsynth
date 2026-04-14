@@ -82,7 +82,6 @@ foreach ($all_covers as $coverdata) {
             <h4><?= htmlspecialchars($vb) ?></h4>
             <h5><?= htmlspecialchars($byline) ?></h5>
             <h6><?= htmlspecialchars($date) ?></h6>
-            <p><?= htmlspecialchars($lyric_format) ?></p>
         </div>
         <?php
     }
