@@ -129,7 +129,7 @@ foreach ($all_covers as $coverdata) {
         "https://youtube.com/embed/$1",
         $video_link
     );
-    $video = !empty($video_link) ? '<div class="video-container"><iframe src="' . htmlspecialchars($embed_url) . '" frameborder="0" allowfullscreen></iframe></div>' : '';
+    $video = !empty($video_link) ? '<div class="video-container"><iframe src="' . htmlspecialchars($embed_url) . '" frameborder="0" allowfullscreen loading="lazy"></iframe></div>' : '';
 
     // if cover meets below requirements, output a box with the info in it.
     if (!empty($raw_video) && $year >=2016) {
