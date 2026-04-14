@@ -33,10 +33,10 @@ foreach ($folders as $song) {
         $vb_data = $coverdata['voicebank'] ?? '';
         $vb = is_array($vb_data) ? implode(', ', $vb_data) : $vb_data;
 
-        $artist_data = $coverdata['music & lyrics'] ?? 'artist';
+        $artist_data = $coverdata['music & lyrics'] ?? '';
         $artist = is_array($artist_data) ? implode(', ', $artist_data) : $artist_data;
 
-        $ogvo_data = $coverdata['original vocals'] ?? 'orig. vocals';
+        $ogvo_data = $coverdata['original vocals'] ?? '';
         $ogvo = is_array($ogvo_data) ? implode(', ', $ogvo_data) : $ogvo_data;
 
         $year = $coverdata['Year'];
