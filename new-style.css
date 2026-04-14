@@ -400,10 +400,9 @@ button {
         margin: 5px;
     }
     &:hover {
-        background: #114696 80%;
+        background: #62a8d3;
         color: #b98029;
         animation: pulse .5s;
-        font-family: "Yatra One";
         cursor: pointer;
     }
 }
