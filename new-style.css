@@ -400,7 +400,7 @@ button {
         margin: 5px;
     }
     &:hover {
-        background: linear-gradient(90deg, #29007100 0%, #114696 20%, #114696 80%, #29007100 100%);
+        background: #114696 80%;
         color: #b98029;
         animation: pulse .5s;
         font-family: "Yatra One";
