@@ -55,13 +55,15 @@ foreach ($folders as $song) {
         $video_link = is_array($raw_video) ? ($raw_video[0] ?? '') : $raw_video;
         $video = !empty($video_link) ? '<iframe src="' . htmlspecialchars($video_link) . '"></iframe>' : '';
 
+        $byline = ($artist == $ogvo) ? $artist : $artist . ' ft. ' . $ogvo;
+
     ?>
 
     <div class="coverbox">
         <div class="covervid"> <?=$video ?> </div>
         <a href="<?=$coverpage ?>"><h2><?= $title ?></h2></a>
         <h4><?= $vb ?></h4>
-        <p><?= $artist ?> | <?= $ogvo ?></p>
+        <p><?= $byline ?></p>
         <p><?= $desc ?></p>
     </div>
 
