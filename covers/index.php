@@ -71,28 +71,25 @@ foreach ($all_covers as $coverdata) {
     $vb = is_array($vb_data) ? implode(', ', $vb_data) : $vb_data;
 
     $vb_link = '';
+    // Go UP one level from /covers/ to find /voicebanks/
     $vb_base_path = realpath(__DIR__ . '/../voicebanks');
+    if (empty($all_vbs)) { echo "<!-- Debug: No voicebanks found in $vb_base_path -->"; } 
 
     if ($vb_base_path) {
-        // Use a recursive directory iterator to find ALL info.yml files regardless of depth
-        $directory = new RecursiveDirectoryIterator($vb_base_path);
-        $iterator = new RecursiveIteratorIterator($directory);
-        
-        foreach ($iterator as $file) {
-            if ($file->getFilename() === 'info.yml') {
-                $voicebank_info = Yaml::parseFile($file->getPathname());
+        $all_vbs = glob($vb_base_path . '/*/*/info.yml');
+        foreach ($all_vbs as $voicebank_file) { 
+            $voicebank_info = Yaml::parseFile($voicebank_file);
 
-                if (($voicebank_info['vbname'] ?? '') === $vb) {
-                    $abs_folder = $file->getPath();
-                    
-                    // Standardize slashes for the search
-                    $clean_abs = str_replace('\\', '/', $abs_folder);
-                    $path_parts = explode('/voicebanks/', $clean_abs);
-                    $relative_folder = end($path_parts);
-                    
-                    $vb_link = '/voicebanks/' . $relative_folder;
-                    break;
-                }
+            if (($voicebank_info['vbname'] ?? '') === $vb) {
+                // Get the folder path
+                $abs_folder = dirname($voicebank_file);
+                
+                // Extract the 'char/bank' part from the absolute path
+                $path_parts = explode('/voicebanks/', str_replace('\\', '/', $abs_folder));
+                $relative_folder = end($path_parts);
+                
+                $vb_link = '/voicebanks/' . $relative_folder;
+                break;
             }
         }
     }
