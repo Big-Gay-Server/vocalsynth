@@ -45,11 +45,12 @@ foreach ($folders as $song) {
 
         $lyric_data = $coverdata['lyric for desc'] ?? '';
         $lyric = is_array($lyric_data) ? implode(', ', $lyric_data): $lyric_data;
+        $lyric_format = '"' . $lyric . '"';
         
         $comment_data = $coverdata['comments'] ?? '';
         $comment = is_array($comment_data) ? implode(', ', $comment_data): $comment_data;
 
-        $desc = "\"" . $lyric . "\"" . "<br>" . $comment;
+        $desc = $lyric_format . "<br>" . $comment;
 
         $raw_video = $coverdata['video link'] ?? '';
         $video_link = is_array($raw_video) ? ($raw_video[0] ?? '') : $raw_video;
