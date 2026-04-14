@@ -39,7 +39,9 @@ echo '<div class="covercontainer">';
 // JUST ONE LOOP HERE
 foreach ($all_covers as $coverdata) {
     $coverpage = $coverdata['file_path'];
-    $song = $coverdata['song name'];
+    $origname = $coverdata['orig name'] ?? '';
+    $romname = $coverdata['en/rom name'] ?? '';
+    $song = !empty($origname && $romname) ? $origname . " / " . $romname : '';
 
     $vb_data = $coverdata['voicebank'] ?? '';
     $vb = is_array($vb_data) ? implode(', ', $vb_data) : $vb_data;
