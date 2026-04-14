@@ -71,7 +71,8 @@ foreach ($all_covers as $coverdata) {
     $vb = is_array($vb_data) ? implode(', ', $vb_data) : $vb_data;
     // loop thru voicebanks and find one that matches, to link?
     $vb_link = '';
-    $all_vbs = glob('/voicebanks/*/info.yml');
+    $vb_base_path = $_SERVER['DOCUMENT_ROOT'] . '/voicebanks';
+    $all_vbs = glob($vb_base_path . '/*/info.yml');
         foreach ($all_vbs as $voicebank) {
             $voicebank_info = Yaml::parseFile($voicebank);
     
