@@ -51,8 +51,9 @@ foreach ($folders as $song) {
 
         $desc = "\"" . $lyric . "\"" . "<br>" . $comment;
 
-        $video_link = is_array($coverdata['video link']) ? $coverdata['video link'][0]: $coverdata['video link'];
-        $video = $coverdata['video link'] ? '<iframe src="' . $video_link . '"></iframe>' : '';
+        $raw_video = $coverdata['video link'] ?? '';
+        $video_link = is_array($raw_video) ? ($raw_video[0] ?? '') : $raw_video;
+        $video = !empty($video_link) ? '<iframe src="' . htmlspecialchars($video_link) . '"></iframe>' : '';
 
     ?>
 
