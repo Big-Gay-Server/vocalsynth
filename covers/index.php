@@ -57,7 +57,7 @@ if ($all_vbs) {
             $url_path = str_replace('/usr/share/nginx/html/vocalsynth', '', dirname($vb_file));
             
             foreach ($names_array as $name) {
-                $vb_map[strtolower(trim($name ?? ''))] = $url_path;
+                $vb_map[strtolower(trim($name))] = $url_path;
             }
         }
     }
@@ -136,10 +136,10 @@ foreach ($all_covers as $coverdata) {
         ?>
         <div class="coverbox">
             <?=$video ?> 
-            <a href="<?=$coverpage ?>"><h3><?= htmlspecialchars($title ?? '') ?></h3></a>
+            <a href="<?=$coverpage ?>"><h3><?= htmlspecialchars($title) ?></h3></a>
             <h4><?= $vb_display ?></h4> <!-- Removed the outer <a> tag so each name has its own link -->
-            <h5><?= htmlspecialchars($byline ?? '') ?></h5>
-            <h6><?= htmlspecialchars($date ?? '') ?></h6>
+            <h5><?= htmlspecialchars($byline) ?></h5>
+            <h6><?= htmlspecialchars($date) ?></h6>
         </div>
         <?php
     }
