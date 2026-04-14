@@ -41,9 +41,9 @@ foreach ($folders as $song) {
 
         $title = $multicover ? $song . " (" . $year . ")" : $song;
 
-        $lyric = $coverdata['lyric for desc'] ? "\"" . $coverdata['lyric for desc'] . "\"" : '';
+        $lyric = $coverdata['lyric for desc'] ? $coverdata['lyric for desc']: '';
         $comment = $coverdata['comments'] ? $coverdata['comments'] : '';
-        $desc = $lyric . "<br>" . $comment;
+        $desc = "\"" . $lyric . "\"" . "<br>" . $comment;
 
     ?>
 
