@@ -111,7 +111,7 @@ foreach ($all_covers as $coverdata) {
         <div class="coverbox">
             <?=$video ?> 
             <a href="<?=$coverpage ?>"><h3><?= htmlspecialchars($title) ?></h3></a>
-            <h4><?= htmlspecialchars($vb) ?></h4>
+            <a href="<?= $vb_link ?>"><h4><?= htmlspecialchars($vb) ?></h4></a>
             <h5><?= htmlspecialchars($byline) ?></h5>
             <h6><?= htmlspecialchars($date) ?></h6>
         </div>
