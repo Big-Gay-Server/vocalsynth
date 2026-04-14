@@ -71,7 +71,7 @@ foreach ($all_covers as $coverdata) {
     $dateformat = 'F j, Y';
     $date = isset($coverdata['date']) ? date($dateformat, strtotime($coverdata['date'])) : '';
 
-    if (!empty($raw_video)) {
+    if (!empty($raw_video) && $year >=2016) {
         ?>
         <div class="coverbox">
             <?=$video ?> 
