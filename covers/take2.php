@@ -67,7 +67,8 @@ foreach ($folders as $song) {
         <div class="covervid"> <?=$video ?> </div>
         <a href="<?=$coverpage ?>"><h2><?= $title ?></h2></a>
         <h4><?= $vb ?></h4>
-        <p><?= $byline ?> | posted <?= $date ?></p>
+        <p><?= $date ?></p>
+        <p><?= $byline ?></p>
         <p><?= $desc ?></p>
     </div>
 
