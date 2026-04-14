@@ -52,7 +52,6 @@ foreach ($all_covers as $coverdata) {
 
     $year = $coverdata['Year'] ?? '';
     
-    // Use the multicover flag we saved earlier
     $title = $coverdata['is_multicover'] ? $song . " (" . $year . ")" : $song;
 
     $lyric_data = $coverdata['lyric for desc'] ?? '';
@@ -72,15 +71,17 @@ foreach ($all_covers as $coverdata) {
     $dateformat = 'F j, Y';
     $date = isset($coverdata['date']) ? date($dateformat, strtotime($coverdata['date'])) : '';
 
-    ?>
-    <div class="coverbox">
-        <?=$video ?> 
-        <a href="<?=$coverpage ?>"><h2><?= htmlspecialchars($title) ?></h2></a>
-        <h4><?= htmlspecialchars($vb) ?></h4>
-        <h6><?= htmlspecialchars($date) ?></h6>
-        <p><?= htmlspecialchars($byline) ?></p>
-        <p><?= htmlspecialchars($lyric_format) ?></p>
-    </div>
-    <?php
+    if (!empty($raw_video)) {
+        ?>
+        <div class="coverbox">
+            <?=$video ?> 
+            <a href="<?=$coverpage ?>"><h2><?= htmlspecialchars($title) ?></h2></a>
+            <h4><?= htmlspecialchars($vb) ?></h4>
+            <h6><?= htmlspecialchars($date) ?></h6>
+            <p><?= htmlspecialchars($byline) ?></p>
+            <p><?= htmlspecialchars($lyric_format) ?></p>
+        </div>
+        <?php
+    }
 }
 echo '</div>';
