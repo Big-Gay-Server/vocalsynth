@@ -3,7 +3,8 @@
     "description": "vocalsynth site!",
     "type": "project",
     "require": {
-        "symfony/yaml": "^6.0"
+        "symfony/yaml": "^6.0",
+        "erusev/parsedown": "^1.8"
     },
     "authors": [
         {
