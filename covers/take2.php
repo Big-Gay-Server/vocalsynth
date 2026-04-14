@@ -15,7 +15,7 @@ function getFrontMatter($filePath)
     $content = file_get_contents($filePath);
     $parts = explode('---', $content);
     if (count($parts) >= 3) {
-        return Yaml::parseFile(trim($parts[1]));
+        return Yaml::parse(trim($parts[1]));
     }
     return [];
 }
