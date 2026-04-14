@@ -59,8 +59,7 @@ foreach ($folders as $song) {
             "https://youtube.com",
             $video_link
         );
-        $video = !empty($video_link) ? '<div class="video-container"><iframe src="' . htmlspecialchars($embed_url) . '"></iframe></div>' : '';
-
+        $video = !empty($video_link) ? '<div class="video-container"><iframe src="' . htmlspecialchars($embed_url) . '" frameborder="0" allowfullscreen></iframe></div>' : '';
         $byline = ($artist == $ogvo) ? $artist : $artist . ' ft. ' . $ogvo;
 
         $dateformat = 'F j, Y';
