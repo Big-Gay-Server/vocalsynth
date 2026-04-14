@@ -71,7 +71,7 @@ foreach ($all_covers as $coverdata) {
     $vb = is_array($vb_data) ? implode(', ', $vb_data) : $vb_data;
     
     $vb_link = '';
-    $vb_base_path = realpath($_SERVER['DOCUMENT_ROOT'] . '/voicebanks');
+    $vb_base_path = __DIR__ . '/voicebanks';
     
     if ($vb_base_path) {
         $all_vbs = glob($vb_base_path . '/*/*/info.yml');
