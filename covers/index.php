@@ -90,7 +90,7 @@ foreach ($all_covers as $coverdata) {
     // voicebank logic
     $vb_data = $coverdata['voicebank'] ?? '';
     $vb = is_array($vb_data) ? implode(', ', $vb_data) : $vb_data;
-    $vb_link = $vb_map[$vb] ?? '';
+    $vb_link = $vb_map[strtolower($vb)] ?? '';
 
     // original song info logic
     $artist_data = $coverdata['music & lyrics'] ?? '';
