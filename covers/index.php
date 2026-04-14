@@ -72,7 +72,8 @@ foreach ($all_covers as $coverdata) {
 
     $vb_link = '';
     // Go UP one level from /covers/ to find /voicebanks/
-    $vb_base_path = realpath(__DIR__ . '/../voicebanks'); 
+    $vb_base_path = realpath(__DIR__ . '/../voicebanks');
+    if (empty($all_vbs)) { echo "<!-- Debug: No voicebanks found in $vb_base_path -->"; } 
 
     if ($vb_base_path) {
         $all_vbs = glob($vb_base_path . '/*/*/info.yml');
