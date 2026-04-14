@@ -25,11 +25,11 @@ UST: LunarConstruct
 mix: LunarConstruct
 illust: deafnotes
 movie: LunarConstruct
-original video: www.youtube.com/watch?v=8Ts6pUuRZCg
-audio link: https://soundcloud.com/utaumerisdae/lilactime
-video link: https://youtu.be/-VljAOqm_j0
+original video: ://youtube.com
+audio link: https://soundcloud.com
+video link: https://youtu.be
 UST page:
-  - https://www.notion.so/lilac-time-e5411972f7ef4c81943d995f4ad928d7?pvs=21
+  - https://notion.so
 SHOW PROMO?: false
 title: 【UTAU カバー】 lilac time 【】+USTx
 description: >-
@@ -42,34 +42,34 @@ description: >-
 
   And with that, please enjoy Merisdae!
 
-  ⟡ DOWNLOAD MERISDAE V2 :  ⟡
+  "⟡ DOWNLOAD MERISDAE V2 :  ⟡"
 
-  ⦅ CREDITS ⦆
+  "⦅ CREDITS ⦆"
 
-  ⟡ SONG: lilac time
-  ⟡ MUSIC & LYRICS: Yukari Hashimoto
-  ⟡ ORIGINAL: Yumi Aiba (CV: Juri Kimura)
-  ⟡ UTAU: Merisdae v2
-  ⟡ UST: LunarConstruct
-  ⟡ TUNING: 
-  ⟡ MIX: LunarConstruct
-  ⟡ ILLUST: deafnotes
-  ⟡ MOVIE: LunarConstruct
+  "⟡ SONG: lilac time"
+  "⟡ MUSIC & LYRICS: Yukari Hashimoto"
+  "⟡ ORIGINAL: Yumi Aiba (CV: Juri Kimura)"
+  "⟡ UTAU: Merisdae v2"
+  "⟡ UST: LunarConstruct"
+  "⟡ TUNING: "
+  "⟡ MIX: LunarConstruct"
+  "⟡ ILLUST: deafnotes"
+  "⟡ MOVIE: LunarConstruct"
 
-  ⦅ LINKS ⦆
+  "⦅ LINKS ⦆"
 
-  ⟡ ORIGINAL VIDEO: www.youtube.com/watch?v=8Ts6pUuRZCg
-  ⟡ AUDIO UPLOAD: https://soundcloud.com/utaumerisdae/lilactime
-  ⟡ VIDEO UPLOAD: https://youtu.be/-VljAOqm_j0
-  ⟡ UST DL: https://drive.google.com/file/d/1b3gA7cu2a3WB1MmJFRsUqE8Lby2KrxNH/view?usp=sharing
+  "⟡ ORIGINAL VIDEO: ://youtube.com"
+  "⟡ AUDIO UPLOAD: https://soundcloud.com"
+  "⟡ VIDEO UPLOAD: https://youtu.be"
+  "⟡ UST DL: https://google.com"
 
-  ⦅ WHERE TO FIND ME ⦆
+  "⦅ WHERE TO FIND ME ⦆"
 
-  ⟡ WEBSITE: http://lunarconstruct.net
-  ⟡ JOIN THE DISCORD: https://discord.gg/JfDRK8C6Rj
-  ⟡ BLUESKY: https://bsky.app/profile/lunarconstruct.net
-  ⟡ UTAFORUM: https://utaforum.net/members/lunarconstruct.2887/
-  ⟡ VOCADB: https://vocadb.net/Ar/43235
+  "⟡ WEBSITE: http://lunarconstruct.net"
+  "⟡ JOIN THE DISCORD: https://discord.gg"
+  "⟡ BLUESKY: https://bsky.app"
+  "⟡ UTAFORUM: https://utaforum.net"
+  "⟡ VOCADB: https://vocadb.net"
 bsky: hidden
 discord server post: hidden
 discord promo: hidden
