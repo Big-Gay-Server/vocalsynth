@@ -45,7 +45,7 @@ foreach ($folders as $song) {
 
         $lyric_data = $coverdata['lyric for desc'] ?? '';
         $lyric = is_array($lyric_data) ? implode(', ', $lyric_data): $lyric_data;
-        $lyric_format = '"' . $lyric . '"';
+        $lyric_format = !empty($lyric) ? '"' . $lyric . '"' : '';
         
         $comment_data = $coverdata['comments'] ?? '';
         $comment = is_array($comment_data) ? implode(', ', $comment_data): $comment_data;
