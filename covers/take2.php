@@ -73,7 +73,7 @@ foreach ($folders as $song) {
         <h4><?= $vb ?></h4>
         <h6><?= $date ?></h6>
         <p><?= $byline ?></p>
-        <p><?= $desc ?></p>
+        <p><?= $lyric_format ?></p>
     </div>
 
 
