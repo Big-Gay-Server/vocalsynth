@@ -45,26 +45,22 @@ usort($all_covers, function($a, $b) {
 $vb_map = [];
 $vb_base_path = '/usr/share/nginx/html/vocalsynth/voicebanks';
 
-$all_vbs = glob($vb_base_path . '/*/*/info.yaml') ?: [];
+$all_vbs = glob($vb_base_path . '/*/*/{info.yml,info.yaml}', GLOB_BRACE) ?: [];
 
 if ($all_vbs) {
     foreach ($all_vbs as $vb_file) {
         $info = Yaml::parseFile($vb_file);
-        $name = $info['vbname'] ?? '';
-        if ($name) {
+        $raw_names = $info['vbname'] ?? '';
+        
+        if ($raw_names) {
+            $names_array = explode(',', $raw_names);
             $url_path = str_replace('/usr/share/nginx/html/vocalsynth', '', dirname($vb_file));
-            // Store as lowercase for easier matching
-            $vb_map[strtolower($name)] = $url_path;
+            
+            foreach ($names_array as $name) {
+                $vb_map[strtolower(trim($name))] = $url_path;
+            }
         }
     }
-}
-
-// DEBUG BLOCK
-echo "<!-- Debug: Found " . count($all_vbs) . " info.yml files -->";
-echo "<!-- Debug: Map Keys: " . implode(', ', array_keys($vb_map)) . " -->";
-if (!empty($all_covers[0])) {
-    $first_vb = is_array($all_covers[0]['voicebank']) ? $all_covers[0]['voicebank'][0] : $all_covers[0]['voicebank'];
-    echo "<!-- Debug: Searching for: " . strtolower($first_vb) . " -->";
 }
 
 echo '<h1>Covers</h1>';
