@@ -381,7 +381,7 @@ button {
     }
 }
 
-.grid-container {
+.covercontainer {
     display: grid;
     /* Adjust '300px' to change how wide each box should be */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
