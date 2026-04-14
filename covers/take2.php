@@ -18,6 +18,8 @@ function getFrontMatter($filePath)
     return [];
 }
 
+echo '<div class="covercontainer">';
+
 foreach ($folders as $song) {
     $covers = glob($song . '*.md');
     $multicover = count($covers) >= 2; 
@@ -62,3 +64,4 @@ foreach ($folders as $song) {
     <?php
     }
 }
+echo '</div>';

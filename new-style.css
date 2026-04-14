@@ -381,10 +381,19 @@ button {
     }
 }
 
+.grid-container {
+    display: grid;
+    /* Adjust '300px' to change how wide each box should be */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 20px; /* Space between the boxes */
+    padding: 20px;
+}
+
 .coverbox {
     background-color: #1f033849;
     border-radius: 20px;
     padding: 30px;
     border: 1px solid #62a8d3;
     filter: drop-shadow(4px 4px 4px rgb(0, 0, 0, 0.486));
+    box-sizing: border-box;
 }
