@@ -69,19 +69,23 @@ foreach ($all_covers as $coverdata) {
     // voicebank logic
     $vb_data = $coverdata['voicebank'] ?? '';
     $vb = is_array($vb_data) ? implode(', ', $vb_data) : $vb_data;
-    // loop thru voicebanks and find one that matches, to link?
+    
     $vb_link = '';
-    $vb_base_path = $_SERVER['DOCUMENT_ROOT'] . '/voicebanks';
-    $all_vbs = glob($vb_base_path . '/*/*/info.yml');
-        foreach ($all_vbs as $voicebank) {
+    $vb_base_path = realpath($_SERVER['DOCUMENT_ROOT'] . '/voicebanks');
+    
+    if ($vb_base_path) {
+        $all_vbs = glob($vb_base_path . '/*/*/info.yml');
+        foreach ($all_vbs as $voicebank) { 
             $voicebank_info = Yaml::parseFile($voicebank);
     
             if (($voicebank_info['vbname'] ?? '') === $vb) {
-                $abs_folder_path = dirname($voicebank_file);
+                $abs_folder_path = dirname($voicebank);
                 $vb_link = str_replace($_SERVER['DOCUMENT_ROOT'], '', $abs_folder_path);
+                $vb_link = str_replace('\\', '/', $vb_link);
                 break;
             }
         }
+    }
 
     // original song info logic
     $artist_data = $coverdata['music & lyrics'] ?? '';
