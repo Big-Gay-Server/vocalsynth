@@ -41,12 +41,15 @@ foreach ($folders as $song) {
 
         $title = $multicover ? $song . " (" . $year . ")" : $song;
 
+        $desc = $coverdata['lyric for desc'] . $coverdata['comments'];
+
     ?>
 
     <div class="coverbox">
         <a href="<?=$coverpage ?>"><h2><?= $title ?></h2></a>
         <h4><?= $vb ?></h4>
         <p><?= $artist ?> | <?= $ogvo ?></p>
+        <p><?= $desc ?></p>
     </div>
 
 
