@@ -89,9 +89,24 @@ foreach ($all_covers as $coverdata) {
     $title = $coverdata['is_multicover'] ? $song . " (" . $year . " ver)" : $song; 
 
     // voicebank logic
-    $vb_data = $coverdata['voicebank'] ?? '';
-    $vb = is_array($vb_data) ? implode(', ', $vb_data) : $vb_data;
-    $vb_link = $vb_map[strtolower($vb)] ?? '';
+    $vb_data = $coverdata['voicebank'] ?? ''; // grab vb data
+    
+    
+    $vb_array = is_array($vb_data) ? $vb_data : [$vb_data]; // convert to array if it isn't one already
+    $vb_links_html = [];
+
+    foreach ($vb_array as $vb_item) {        
+        $link = $vb_map[strtolower(trim($vb_name))] ?? ''; // look up the vb
+        
+        if ($link) {
+            // If we found a match, make it a link
+            $vb_links_html[] = '<a href="' . $link . '">' . htmlspecialchars($vb_name) . '</a>';
+        } else {
+            // If no match, just show the plain text
+            $vb_links_html[] = htmlspecialchars($vb_name);
+        }
+    }
+    $vb_display = implode(', ', $vb_links_html);
 
     // original song info logic
     $artist_data = $coverdata['music & lyrics'] ?? '';
@@ -122,7 +137,7 @@ foreach ($all_covers as $coverdata) {
         <div class="coverbox">
             <?=$video ?> 
             <a href="<?=$coverpage ?>"><h3><?= htmlspecialchars($title) ?></h3></a>
-            <a href="<?= $vb_link ?>"><h4><?= htmlspecialchars($vb) ?></h4></a>
+            <h4><?= $vb_display ?></h4> <!-- Removed the outer <a> tag so each name has its own link -->
             <h5><?= htmlspecialchars($byline) ?></h5>
             <h6><?= htmlspecialchars($date) ?></h6>
         </div>
