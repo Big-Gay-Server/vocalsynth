@@ -402,7 +402,6 @@ button {
     &:hover {
         background: #62a8d3;
         color: #b98029;
-        animation: pulse .5s;
         cursor: pointer;
     }
 }
