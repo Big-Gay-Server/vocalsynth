@@ -386,7 +386,7 @@ button {
     /* Adjust '300px' to change how wide each box should be */
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
     gap: 10px; /* Space between the boxes */
-    padding: 5px;
+    padding: 10px;
 }
 
 .coverbox {
