@@ -45,10 +45,7 @@ usort($all_covers, function($a, $b) {
 $vb_map = [];
 $vb_base_path = '/usr/share/nginx/html/vocalsynth/voicebanks';
 
-$all_vbs = array_merge(
-    glob($vb_base_path . '/*/info.yml') ?: [],
-    glob($vb_base_path . '/*/*/info.yml') ?: []
-);
+$all_vbs = glob($vb_base_path . '/*/*/info.yaml') ?: [];
 
 if ($all_vbs) {
     foreach ($all_vbs as $vb_file) {
