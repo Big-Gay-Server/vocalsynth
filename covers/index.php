@@ -52,7 +52,7 @@ foreach ($all_covers as $coverdata) {
 
     $year = $coverdata['Year'] ?? '';
     
-    $title = $coverdata['is_multicover'] ? $song . " (" . $year . ")" : $song;
+    $title = $coverdata['is_multicover'] ? $song . " (" . $year . " ver)" : $song;
 
     $lyric_data = $coverdata['lyric for desc'] ?? '';
     $lyric = is_array($lyric_data) ? implode(', ', $lyric_data): $lyric_data;
@@ -75,10 +75,10 @@ foreach ($all_covers as $coverdata) {
         ?>
         <div class="coverbox">
             <?=$video ?> 
-            <a href="<?=$coverpage ?>"><h2><?= htmlspecialchars($title) ?></h2></a>
+            <a href="<?=$coverpage ?>"><h3><?= htmlspecialchars($title) ?></h3></a>
             <h4><?= htmlspecialchars($vb) ?></h4>
+            <h5><?= htmlspecialchars($byline) ?></h5>
             <h6><?= htmlspecialchars($date) ?></h6>
-            <p><?= htmlspecialchars($byline) ?></p>
             <p><?= htmlspecialchars($lyric_format) ?></p>
         </div>
         <?php
