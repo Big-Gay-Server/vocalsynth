@@ -384,7 +384,7 @@ button {
 .covercontainer {
     display: grid;
     /* Adjust '300px' to change how wide each box should be */
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
     gap: 10px; /* Space between the boxes */
     padding: 10px;
 }
@@ -398,5 +398,12 @@ button {
     box-sizing: border-box;
     & h2,h3,h4,h5,h6 {
         margin: 5px;
+    }
+    &:hover {
+        background: linear-gradient(90deg, #29007100 0%, #114696 20%, #114696 80%, #29007100 100%);
+        color: #b98029;
+        animation: pulse .5s;
+        font-family: "Yatra One";
+        cursor: pointer;
     }
 }
