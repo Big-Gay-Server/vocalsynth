@@ -77,8 +77,8 @@ foreach ($all_covers as $coverdata) {
             $voicebank_info = Yaml::parseFile($voicebank);
     
             if (($voicebank_info['vbname'] ?? '') === $vb) {
-                $folder_name = basename(dirname($voicebank));
-                $vb_link = '/voicebanks/' . $folder_name;
+                $abs_folder_path = dirname($voicebank_file);
+                $vb_link = str_replace($_SERVER['DOCUMENT_ROOT'], '', $abs_folder_path);
                 break;
             }
         }
