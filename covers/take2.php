@@ -51,9 +51,13 @@ foreach ($folders as $song) {
 
         $desc = "\"" . $lyric . "\"" . "<br>" . $comment;
 
+        $video_link = $coverdata['video link'];
+        $video = $video_link ? '<iframe src="' . $video_link . '"></iframe>' : '';
+
     ?>
 
     <div class="coverbox">
+        <div class="covervid"> <?=$video ?> </div>
         <a href="<?=$coverpage ?>"><h2><?= $title ?></h2></a>
         <h4><?= $vb ?></h4>
         <p><?= $artist ?> | <?= $ogvo ?></p>
