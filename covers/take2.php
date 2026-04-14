@@ -56,7 +56,7 @@ foreach ($folders as $song) {
         $video_link = is_array($raw_video) ? ($raw_video[0] ?? '') : $raw_video;
         $embed_url = preg_replace(
             "/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([^\s&]+)/",
-            "https://youtube.com",
+            "https://youtube.com/embed/$1",
             $video_link
         );
         $video = !empty($video_link) ? '<div class="video-container"><iframe src="' . htmlspecialchars($embed_url) . '" frameborder="0" allowfullscreen></iframe></div>' : '';
