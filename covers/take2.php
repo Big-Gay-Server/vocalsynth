@@ -58,13 +58,15 @@ foreach ($folders as $song) {
 
         $byline = ($artist == $ogvo) ? $artist : $artist . ' ft. ' . $ogvo;
 
+        $date = strtotime($coverdata['date']) ?? '';
+
     ?>
 
     <div class="coverbox">
         <div class="covervid"> <?=$video ?> </div>
         <a href="<?=$coverpage ?>"><h2><?= $title ?></h2></a>
         <h4><?= $vb ?></h4>
-        <p><?= $byline ?></p>
+        <p><?= $byline ?> | posted <?= $date ?></p>
         <p><?= $desc ?></p>
     </div>
 
