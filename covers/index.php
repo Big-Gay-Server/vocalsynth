@@ -56,7 +56,8 @@ if ($all_vbs) {
         $name = $info['vbname'] ?? '';
         if ($name) {
             $url_path = str_replace('/usr/share/nginx/html/vocalsynth', '', dirname($vb_file));
-            $vb_map[$name] = $url_path;
+            // Store as lowercase for easier matching
+            $vb_map[strtolower($name)] = $url_path;
         }
     }
 }
