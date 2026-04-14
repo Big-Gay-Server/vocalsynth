@@ -76,6 +76,7 @@ foreach ($all_covers as $coverdata) {
 
     // Search for the info.yml files
     $all_vbs = glob($vb_base_path . '/*/*/info.yml');
+    if (empty($all_vbs)) { echo "<!-- Debug: No voicebanks found in $vb_base_path -->"; }
     
     if ($all_vbs) {
         foreach ($all_vbs as $voicebank_file) { 
