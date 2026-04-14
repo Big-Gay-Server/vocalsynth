@@ -41,7 +41,8 @@ foreach ($all_covers as $coverdata) {
     $coverpage = $coverdata['file_path'];
     $origname = $coverdata['orig name'] ?? '';
     $romname = $coverdata['en/rom name'] ?? '';
-    $song = !empty($origname && $romname) ? $origname . " / " . $romname : '';
+    $namessame = $origname == $romname ? true : false;
+    $song = !empty($origname && $romname) && ($namessame==false) ? $origname . " / " . $romname : (!empty($origname && $romname) && ($namessame==true) ? $origname : '');
 
     $vb_data = $coverdata['voicebank'] ?? '';
     $vb = is_array($vb_data) ? implode(', ', $vb_data) : $vb_data;
