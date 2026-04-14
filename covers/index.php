@@ -96,14 +96,14 @@ foreach ($all_covers as $coverdata) {
     $vb_links_html = [];
 
     foreach ($vb_array as $vb_item) {        
-        $link = $vb_map[strtolower(trim($vb_name))] ?? ''; // look up the vb
+        $link = $vb_map[strtolower(trim($vbname))] ?? ''; // look up the vb
         
         if ($link) {
             // If we found a match, make it a link
             $vb_links_html[] = '<a href="' . $link . '">' . htmlspecialchars($vb_name) . '</a>';
         } else {
             // If no match, just show the plain text
-            $vb_links_html[] = htmlspecialchars($vb_name);
+            $vb_links_html[] = htmlspecialchars($vbname);
         }
     }
     $vb_display = implode(', ', $vb_links_html);
