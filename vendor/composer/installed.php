@@ -3,13 +3,22 @@
         'name' => 'lunarconstruct/vocalsynth',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '0061a2e208cf61d787b74a2b2a9eeb64470e24c2',
+        'reference' => '53c7e8dcbb0cf856692e7ad1faffdeaa9874001e',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'cocur/slugify' => array(
+            'pretty_version' => 'v4.7.1',
+            'version' => '4.7.1.0',
+            'reference' => 'a860dab2b9f5f37775fc6414d4f049434848165f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../cocur/slugify',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'erusev/parsedown' => array(
             'pretty_version' => '1.8.0',
             'version' => '1.8.0.0',
@@ -22,7 +31,7 @@
         'lunarconstruct/vocalsynth' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '0061a2e208cf61d787b74a2b2a9eeb64470e24c2',
+            'reference' => '53c7e8dcbb0cf856692e7ad1faffdeaa9874001e',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
