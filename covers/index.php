@@ -71,10 +71,8 @@ foreach ($all_covers as $coverdata) {
     $vb = is_array($vb_data) ? implode(', ', $vb_data) : $vb_data;
     
     $vb_link = '';
-    // Use __DIR__ to find the folder relative to THIS script
-    $vb_base_path = __DIR__ . '/voicebanks'; 
+    $vb_base_path = realpath(__DIR__ . '/../voicebanks');
 
-    // Search for the info.yml files
     $all_vbs = glob($vb_base_path . '/*/*/info.yml');
     if (empty($all_vbs)) { echo "<!-- Debug: No voicebanks found in $vb_base_path -->"; }
     
