@@ -1,7 +1,9 @@
 <?php
 echo 'this page will be covers!! give me a sec lmfao';
 
-require_once '../Spyc.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Yaml\Yaml;
 
 $folders = glob('*/', GLOB_ONLYDIR);
 $covers = glob('*/*.md');
@@ -13,7 +15,7 @@ function getFrontMatter($filePath)
     $content = file_get_contents($filePath);
     $parts = explode('---', $content);
     if (count($parts) >= 3) {
-        return Spyc::YAMLLoad(trim($parts[1]));
+        return Yaml::parseFile(trim($parts[1]));
     }
     return [];
 }
