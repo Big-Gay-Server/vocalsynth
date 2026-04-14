@@ -58,7 +58,8 @@ foreach ($folders as $song) {
 
         $byline = ($artist == $ogvo) ? $artist : $artist . ' ft. ' . $ogvo;
 
-        $date = date(strtotime($coverdata['date'])) ?? '';
+        $dateformat = 'F j, Y';
+        $date = isset($coverdata['date']) ? date($dateformat, strtotime($coverdata['date'])) : '';
 
     ?>
 
