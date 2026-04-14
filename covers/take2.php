@@ -54,7 +54,12 @@ foreach ($folders as $song) {
 
         $raw_video = $coverdata['video link'] ?? '';
         $video_link = is_array($raw_video) ? ($raw_video[0] ?? '') : $raw_video;
-        $video = !empty($video_link) ? '<iframe src="' . htmlspecialchars($video_link) . '"></iframe>' : '';
+        $embed_url = preg_replace(
+            "/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([^\s&]+)/",
+            "https://youtube.com",
+            $video_link
+        );
+        $video = !empty($video_link) ? '<div class="video-container"><iframe src="' . htmlspecialchars($embed_url) . '"></iframe></div>' : '';
 
         $byline = ($artist == $ogvo) ? $artist : $artist . ' ft. ' . $ogvo;
 
@@ -64,7 +69,7 @@ foreach ($folders as $song) {
     ?>
 
     <div class="coverbox">
-        <div class="video-container"> <?=$video ?> </div>
+        <?=$video ?> 
         <a href="<?=$coverpage ?>"><h2><?= $title ?></h2></a>
         <h4><?= $vb ?></h4>
         <h6><?= $date ?></h6>
