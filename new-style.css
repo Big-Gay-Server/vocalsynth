@@ -396,4 +396,7 @@ button {
     border: 1px solid #62a8d3;
     filter: drop-shadow(4px 4px 4px rgb(0, 0, 0, 0.486));
     box-sizing: border-box;
+    & h2,h3,h4,h5,h6 {
+        padding: 5px;
+    }
 }
