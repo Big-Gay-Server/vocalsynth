@@ -62,6 +62,14 @@ if ($all_vbs) {
     }
 }
 
+// DEBUG BLOCK
+echo "<!-- Debug: Found " . count($all_vbs) . " info.yml files -->";
+echo "<!-- Debug: Map Keys: " . implode(', ', array_keys($vb_map)) . " -->";
+if (!empty($all_covers[0])) {
+    $first_vb = is_array($all_covers[0]['voicebank']) ? $all_covers[0]['voicebank'][0] : $all_covers[0]['voicebank'];
+    echo "<!-- Debug: Searching for: " . strtolower($first_vb) . " -->";
+}
+
 echo '<h1>Covers</h1>';
 echo '<div class="covercontainer">';
 
