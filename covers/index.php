@@ -71,17 +71,27 @@ foreach ($all_covers as $coverdata) {
     $vb = is_array($vb_data) ? implode(', ', $vb_data) : $vb_data;
     
     $vb_link = '';
-    $vb_base_path = __DIR__ . '/voicebanks';
+    // Use __DIR__ to find the folder relative to THIS script
+    $vb_base_path = __DIR__ . '/voicebanks'; 
+
+    // Search for the info.yml files
+    $all_vbs = glob($vb_base_path . '/*/*/info.yml');
     
-    if ($vb_base_path) {
-        $all_vbs = glob($vb_base_path . '/*/*/info.yml');
-        foreach ($all_vbs as $voicebank) { 
-            $voicebank_info = Yaml::parseFile($voicebank);
+    if ($all_vbs) {
+        foreach ($all_vbs as $voicebank_file) { 
+            $voicebank_info = Yaml::parseFile($voicebank_file);
     
             if (($voicebank_info['vbname'] ?? '') === $vb) {
-                $abs_folder_path = dirname($voicebank);
-                $vb_link = str_replace($_SERVER['DOCUMENT_ROOT'], '', $abs_folder_path);
-                $vb_link = str_replace('\\', '/', $vb_link);
+                // 1. Get the path to the folder containing info.yml
+                $abs_folder = dirname($voicebank_file);
+                
+                // 2. Extract just the "merisdae/newphase" part
+                // We explode by '/voicebanks/' and take the last part
+                $path_parts = explode('/voicebanks/', str_replace('\\', '/', $abs_folder));
+                $relative_path = end($path_parts);
+                
+                // 3. Rebuild the link manually
+                $vb_link = '/voicebanks/' . $relative_path;
                 break;
             }
         }
