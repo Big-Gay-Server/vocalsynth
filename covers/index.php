@@ -134,13 +134,13 @@ foreach ($all_covers as $coverdata) {
     // if cover meets below requirements, output a box with the info in it.
     if (!empty($raw_video) && $year >=2016) {
         ?>
-        <a href="<?=$coverpage ?>"><div class="coverbox">
+        <div class="coverbox">
             <?=$video ?> 
             <a href="<?=$coverpage ?>"><h3><?= htmlspecialchars($title) ?></h3></a>
             <h4><?= $vb_display ?></h4> <!-- Removed the outer <a> tag so each name has its own link -->
             <h5><?= htmlspecialchars($byline) ?></h5>
             <h6><?= htmlspecialchars($date) ?></h6>
-        </div></a>
+        </div>
         <?php
     }
 }
