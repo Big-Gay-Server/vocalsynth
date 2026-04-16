@@ -23,8 +23,15 @@ Thanks for stopping by!!!
 // initialize the class
 $manager = new CoverManager();
 
+// set filters
+$filters = [
+    'limit' => 1,
+    'requireVideo' => true,
+    'minYear' => 2016
+];
+
 // fetch covers
-$all_covers = $manager->getCovers(['limit' => 3]); 
+$all_covers = $manager->getCovers($filters); 
 
 // display covers!!! so easy
 echo '<h2>Latest Covers</h2>';

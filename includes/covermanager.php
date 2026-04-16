@@ -70,6 +70,16 @@ class CoverManager {
                     $match = $match && ($cover['Year'] == $filters['year']);
                 }
 
+                // filter out anything before a specific year (defaults to 2016 for modernity's sake)
+                $minYear = $filters['minYear'] ?? 2016; 
+                $match = $match && (($cover['Year'] ?? 0) >= $minYear);
+
+
+                // filter out covers without video links
+                if (isset($filters['requireVideo']) && $filters['requireVideo'] === true) {
+                    $match = $match && !empty($cover['video link'] ?? '');
+                }
+
                 // other filters i might wanna add
                 // // usts, for example to filter out my usts for the ust dl page
 
