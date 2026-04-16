@@ -37,24 +37,14 @@ views:
         direction: DESC
     summaries: {}
     columnSize:
-      note.emoji: -9
+      note.emoji: 13
       formula.song name concat: 230
       note.voicebank: 189
       note.featured: 13
       note.comments: 146
       formula.sort date: 99
-      note.guest voicebanks: 85
-      note.Files & media: 50
-      note.for?: 74
       note.music & lyrics: 122
-      note.original vocals: 114
-      note.original video: 16
       note.UST: 114
-      note.UST page: -83
-      note.illust: 111
-      note.movie: 127
-      note.sub-status: 109
-      note.tags: 121
       note.audio link: 15
       note.video link: -124
   - type: cards

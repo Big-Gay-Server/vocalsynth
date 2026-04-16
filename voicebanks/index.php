@@ -1,7 +1,8 @@
 <?php
-require_once '../Spyc.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/Spyc.php';
 require_once __DIR__ . '/../vendor/autoload.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/covermanager.php';
 
 use Cocur\Slugify\Slugify;
 use Symfony\Component\Yaml\Yaml;
@@ -126,11 +127,20 @@ if ($charaName) {
 						</div>
 					</div>
 				</div>
+				<?php
+			}
+			$manager = new CoverManager();
 
+			$vbcovers = $manager->getCovers(['voicebank' => $currentvb['vbname']]);
+			?>
+				<hr>
+				<h1>Covers</h1>
+				<div class="covercontainer">
+					<?php $manager->renderGrid($vbcovers); ?>
+				</div>
 				<br>
 				<hr><br>
 				<?php
-			}
 		}
 	} else {
 		// CHARACTER PAGE
@@ -185,17 +195,18 @@ if ($charaName) {
 		<h1>Covers</h1>
 
 		<?php
-		$selected_vb = $charaInfo['name'] ?? $charaName;;
-		$data = getCovers($selected_vb);
+		$manager = new CoverManager();
 
-		$vbcovers = $data['covers'];
-		$map = $data['vb_map'];
+		$selected_vb = $charaInfo['name'] ?? $charaName;
+		$vbcovers = $manager->getCovers(['charaFolder' => $selected_vb]);
 		?>
-		
+
 		<div class="covercontainer">
-			<?php renderCoverGrid($vbcovers, $map); ?>
+			<?php
+			$manager->renderGrid($vbcovers);
+			?>
 		</div>
-	<?php
+		<?php
 	}
 } else {
 	?>
