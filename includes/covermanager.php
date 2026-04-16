@@ -76,10 +76,6 @@ class CoverManager {
                 return $match;
             });
         }
-        
-        if (isset($filters['limit'])) {
-            $all_covers = array_slice($all_covers, 0, (int)$filters['limit']);
-        }
 
         // sort the filtered results
         usort($all_covers, function($a, $b) {
@@ -87,6 +83,10 @@ class CoverManager {
             $dateB = isset($b['date']) ? strtotime($b['date']) : 0;
             return $dateB <=> $dateA;
         });
+
+        if (isset($filters['limit'])) {
+            $all_covers = array_slice($all_covers, 0, (int)$filters['limit']);
+        }
 
         return $all_covers; 
     }
