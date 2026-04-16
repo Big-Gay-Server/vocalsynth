@@ -27,7 +27,7 @@ $manager = new CoverManager();
 $all_covers = $manager->getCovers(['limit' => 3]); 
 
 // display covers!!! so easy
-echo '<h2>Latest Cover</h2>';
+echo '<h2>Latest Covers</h2>';
 echo '<div class="covercontainer">';
     $manager->renderGrid($all_covers); 
 echo '</div>';
