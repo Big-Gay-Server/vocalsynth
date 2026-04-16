@@ -20,12 +20,12 @@ Thanks for stopping by!!!
 <br>
 
 <?php
-// initialize the class
+// initialize the class (this specific instance of the cover gird)
 $manager = new CoverManager();
 
 // set filters
 $filters = [
-    'limit' => 1,
+    'limit' => 2,
     'requireVideo' => true,
     'minYear' => 2016
 ];
