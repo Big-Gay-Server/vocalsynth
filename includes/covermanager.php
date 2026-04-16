@@ -76,6 +76,10 @@ class CoverManager {
                 return $match;
             });
         }
+        
+        if (isset($filters['limit'])) {
+            $all_covers = array_slice($all_covers, 0, (int)$filters['limit']);
+        }
 
         // sort the filtered results
         usort($all_covers, function($a, $b) {

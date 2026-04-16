@@ -1,3 +1,9 @@
+<?php
+// imports
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/covermanager.php';
+?>
+
 <h1>Welcome to LunarConstruct's UTAU Site!</h1>
 Hey hey! Name's Lunar!
 <span id="age"></span>, they/them
@@ -13,7 +19,15 @@ Thanks for stopping by!!!
 <br/>
 <br>
 
-<h2>Latest Cover</h2>
-<div class="video-container">
-    <iframe src="https://www.youtube.com/embed/videoseries?si=cqykjJYWaY8li2Pn&amp;list=PLzANTVXMuQ2sbA32E95EdyQS9mb0UEC03" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+<?php
+// initialize the class
+$manager = new CoverManager();
+
+// fetch covers
+$all_covers = $manager->getCovers(); 
+
+// display covers!!! so easy
+echo '<h2>Latest Cover</h2>';
+echo '<div class="covercontainer">';
+    $manager->renderGrid($all_covers); 
+echo '</div>';
