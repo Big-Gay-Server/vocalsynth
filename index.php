@@ -9,7 +9,7 @@ This site was entirely coded by me by hand, so please forgive any scuff! I am ho
 
 Thanks for stopping by!!!
 
-testing! :)
+he he test
 
 <br/>
 <br/>
