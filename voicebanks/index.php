@@ -197,8 +197,16 @@ if ($charaName) {
 		<?php
 		$manager = new CoverManager();
 
+		// set filters
 		$selected_vb = $charaInfo['name'] ?? $charaName;
-		$vbcovers = $manager->getCovers(['charaFolder' => $selected_vb]);
+		$filters = [
+			'requireVideo' => true,
+			'minYear' => 2016,
+			'charaFolder' => $selected_vb
+		];
+
+		// fetch covers
+		$vbcovers = $manager->getCovers($filters);
 		?>
 
 		<div class="covercontainer">
