@@ -24,7 +24,7 @@ Thanks for stopping by!!!
 $manager = new CoverManager();
 
 // fetch covers
-$all_covers = $manager->getCovers(); 
+$all_covers = $manager->getCovers(['limit' => 1]); 
 
 // display covers!!! so easy
 echo '<h2>Latest Cover</h2>';
