@@ -7,8 +7,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/covermanager.php';
 $manager = new CoverManager();
 
 // fetch covers
-$filters = ['limit' => 1];
-$all_covers = $manager->getCovers($filters); 
+$all_covers = $manager->getCovers(['limit' => 1]); 
 
 // display covers!!! so easy
 echo '<h1>Covers</h1>';
