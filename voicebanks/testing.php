@@ -1,16 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/Spyc.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/covermanager.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/voicebankmanager.php';
 
 $urlchara = ($_GET['chara'] ?? null);
-$urlvb    = ($_GET['vb'] ?? null);
+$urlvb = ($_GET['vb'] ?? null);
 
-$vbmanager  = new VoicebankManager();
+$chara_covermanager = new VoicebankManager();
 
 if ($urlchara) {
-    $allCharacters = $vbmanager->getCharacters();
+    $allCharacters = $chara_covermanager->getCharacters();
     $charaInfo = null;
     foreach ($allCharacters as $c) {
         if ($c['slug'] === $urlchara) {
@@ -24,21 +24,21 @@ if ($urlchara) {
         return;
     }
 
-    $voicebanks = $vbmanager->getBanksByCharacter($urlchara);
+    $voicebanks = $chara_covermanager->getBanksByCharacter($urlchara);
     $charaPath = '/' . $urlchara . '/';
 
     if ($urlvb) {
-        $currentvb = $vbmanager->getSpecificBank($voicebanks, $urlvb); ?>
+        $currentvb = $chara_covermanager->getSpecificBank($voicebanks, $urlvb);
+        ?>
         <h1><?= $currentvb['vbname'] ?></h1>
 			<div class="row">
 				<div class="column flex50">
 					<?= $currentvb['vbblurb'] ?>
 				</div>
 				<div class="column flex50">
-                <img class="columnimg" src="<?= $currentvb['id'] ?>/key.png"><br><br>
+                <img class="columnimg" src="<?= $urlchara ?>/<?= $currentvb['id'] ?>/key.png"><br><br>
 					<center>
-						Key Art:
-						<a href="<?= $currentvb['keyartistlink'] ?>"> <?= $currentvb['keyartist'] ?> </a>
+						Key Art: <a href="<?= $currentvb['keyartistlink'] ?>"> <?= $currentvb['keyartist'] ?> </a>
 					</center>
 				</div>
 			</div>
@@ -82,43 +82,45 @@ if ($urlchara) {
 						<img src="/_assets/<?= htmlspecialchars($dl['type']) ?> dl.png" class="columnimg">
 					</a>
 					</div>
-					<?php
-                        endforeach;
-                    endif;
-                    ?>
-					
+					    <?php endforeach;
+                    endif; ?>
 				</div>
 				<br>
 				<div id="<?= $sub['name'] ?>box" class="voicebankbox">
 					<div class="row" style="display: flex; justify-content: center; gap: 20px;">
 						<img src="<?= $sub['iconface'] ?>" class="vbicon column columnimg">
 						<div class="column centervertical">
-							<?php
-                            foreach ($sub['expressions'] as $expression) {
-                                ?>
-							<div id="<?= $sub['name'] ?>_<?= $expression['name'] ?>" class="row">
-								<div class="column expressioninfo flex33">
-									<b><?= $expression['name'] ?></b>
-									(<?= $expression['type'] ?>)<br>Pitches: <?= $expression['pitches'] ?>
-								</div>
-								<div class="column">
-									<audio controls>
-										<source src="<?= $expression['demo'] ?>" type="audio/wav">
-									</audio>
-								</div>
-							</div>
-							<?php
-                            }
+                            <?php 
+                            // Add this IF check to prevent the crash
+                            if (!empty($sub['expressions']) && is_array($sub['expressions'])): 
+                                foreach ($sub['expressions'] as $expression): 
                             ?>
-						</div>
+                                <div id="<?= $sub['name'] ?>_<?= $expression['name'] ?>" class="row">
+                                    <div class="column expressioninfo flex33">
+                                        <b><?= $expression['name'] ?></b>
+                                        (<?= $expression['type'] ?>)<br>Pitches: <?= $expression['pitches'] ?>
+                                    </div>
+                                    <div class="column">
+                                        <audio controls>
+                                            <source src="<?= $expression['demo'] ?>" type="audio/wav">
+                                        </audio>
+                                    </div>
+                                </div>
+                            <?php 
+                                endforeach; 
+                            endif; // End of the IF check
+                            ?>
+                        </div>
 					</div>
 				</div>
-				<?php
-            }
-			echo '<hr>';
-            echo '<h1>Covers</h1>';
+                
+			<?php } // end of subbanks loop ?>
 
-            $vbmanager = new CoverManager();
+            <hr>
+            <h1>Covers</h1>
+
+            <?php
+            $vb_covermanager = new CoverManager();
 
             // set filters
             $selected_vb = $charaInfo['name'] ?? $charaName;
@@ -130,12 +132,12 @@ if ($urlchara) {
             ];
 
             // fetch covers
-            $vbcovers = $vbmanager->getCovers($filters);
+            $vbcovers = $vb_covermanager->getCovers($filters);
             ?>
-
+            
             <div class="covercontainer">
                 <?php
-                $vbmanager->renderGrid($vbcovers);
+                $vb_covermanager->renderGrid($vbcovers);
                 ?>
             </div>
             <?php
@@ -144,7 +146,7 @@ if ($urlchara) {
         <img src="<?= $charaInfo['slug'] ?>/logo.png" style="width:100%">
         <div class="row">
             <div class="column flex50">
-                <img class="columnimg" src="<?= $charaInfo['slug'] ?>/key.png"><br><br>
+                <img class="columnimg" src="<?= $charaInfo['slug'] ?>key.png"><br><br>
                 <center>
                     Voice Provider : <a href="<?= $charaInfo['vplink']; ?>"><?= $charaInfo['vp']; ?></a><br>
                     Key Art: <a href="<?= $charaInfo['keyartistlink']; ?>"><?= $charaInfo['keyartist']; ?></a>
@@ -180,7 +182,7 @@ if ($urlchara) {
                         <p class="column center vbinfo">
                             <b><?= $vb['vbsub'] ?></b><br><br>
                             <?= $vb['vbdesc'] ?><br><br>
-                            <a href="<?= $charaInfo['slug'] . '/' . $vb['id'] ?>"><button type="button">Downloads</button></a>
+                            <a <a href="<?= $charaInfo['slug'] . '/' . $vb['id'] ?>"><button type="button">Downloads</button></a>><button type="button">Downloads</button></a>
                         </p>
                     </div>
                 </div><br>

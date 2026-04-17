@@ -9,7 +9,7 @@ class VoicebankManager {
     private string $webPath = '/voicebanks/';
 
     // fetch all characters
-    public function getAllCharacters(): array {
+    public function getCharacters(): array {
         $charas = [];
         $folders = glob($this->baseDir . '*', GLOB_ONLYDIR);
         foreach ($folders as $dir) {
@@ -22,6 +22,7 @@ class VoicebankManager {
         }
         return $charas;
     }
+
 
     // fetch all voicebanks for a specific character
     public function getBanksByCharacter(string $charaName): array {

@@ -14,6 +14,11 @@ class CoverManager {
         $this->loadVoicebankMap();
     }
 
+    private function stripAccents(string $str): string {
+    // This function replaces accented characters with their plain counterparts
+    return iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $str);
+}
+
     // this loads the voicebank map - aka i think an array with all covers belonging to each voicebank
     private function loadVoicebankMap(): void {
         $all_vbs = glob($this->vb_base_path . '/*/*/{info.yml,info.yaml}', GLOB_BRACE) ?: [];
@@ -24,7 +29,8 @@ class CoverManager {
                 $names_array = explode(',', $raw_names);
                 $url_path = str_replace('/usr/share/nginx/html/vocalsynth', '', dirname($vb_file));
                 foreach ($names_array as $name) {
-                    $this->vb_map[strtolower(trim($name))] = $url_path;
+                    $clean_name = $this->clean($name);
+                    $this->vb_map[$clean_name] = $url_path;
                 }
             }
         }
@@ -104,9 +110,18 @@ class CoverManager {
     // logic for matching character
     private function matchCharacter(array $cover, string $charaFolder, array $map): bool {
         $vbs = (array)($cover['voicebank'] ?? []);
+        
         foreach ($vbs as $vb_name) {
-            $path = $map[strtolower(trim((string)$vb_name))] ?? '';
-            if ($path !== '' && str_contains(strtolower($path), strtolower($charaFolder))) {
+            // Clean the name from the cover (e.g. "Canelé" -> "canele")
+            $clean_vb_name = $this->clean($vb_name);
+            
+            // Look it up in your map
+            $path = $map[$clean_vb_name] ?? '';
+            
+            // Clean the folder name we are searching for
+            $clean_search = $this->clean($charaFolder);
+
+            if ($path !== '' && str_contains(strtolower($path), $clean_search)) {
                 return true;
             }
         }
@@ -189,5 +204,11 @@ class CoverManager {
             </div>
             <?php
         }
+    }
+    private function clean($str) {
+        // 1. Convert to Lowercase
+        $str = mb_strtolower(trim((string)$str), 'UTF-8');
+        // 2. Remove Accents (é -> e)
+        return iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $str);
     }
 }
