@@ -1,15 +1,16 @@
 name: Ayda
-title: ?
-age: ?
-appears: ?
-birthday: ?
-heightcm: ?
-heightft: ?
-gender: ?
-pronouns: ?
+title: '?'
+age: '?'
+appears: '?'
+birthday: '?'
+heightcm: '?'
+heightft: '?'
+gender: '?'
+pronouns: '?'
 coverplaylist: 
 vp: Big Bite
 vplink: https://bigbitelinks.carrd.co
 keyartist: Big Bite Art
 keyartistlink: https://bigbitelinks.carrd.co
 desc: this is a test of the info yaml.
+childrenofdust: false
