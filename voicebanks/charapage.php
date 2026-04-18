@@ -8,7 +8,7 @@
         </center>
     </div>
     <div class="column flex50">
-        <img class="columnimg" src="/banner.png"><br><br>
+        <img class="columnimg" src="/_assets/banner.png"><br><br>
         <center>
             <div id="bio">
                 <b><?= strtoupper($charaInfo['title']); ?></b><br><br>

@@ -3,8 +3,8 @@
 
         </div>
 
-        <img src="/150.gif" class="dancy" style="position: fixed; bottom: 0; right: 0; width: 10rem; z-index: -1; pointer-events: none;"/>
-        <img src="/dancy.gif" class="dancy" style="position: fixed; bottom: 0; left: 0; width: 10rem; z-index: -1; pointer-events: none;"/>
+        <img src="/_assets/150.gif" class="dancy" style="position: fixed; bottom: 0; right: 0; width: 10rem; z-index: -1; pointer-events: none;"/>
+        <img src="/_assets/dancy.gif" class="dancy" style="position: fixed; bottom: 0; left: 0; width: 10rem; z-index: -1; pointer-events: none;"/>
     </body>
 </html>
 

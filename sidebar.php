@@ -37,6 +37,6 @@
     <div id="quicklinks" class="sidebarsection">
         i'll make some nicer ones eventually but here's some placeholders x3
         <br><br>
-        <center><img src="/button.png"><img src="/button2.png"></center>
+        <center><img src="/_assets/button.png"><img src="/_assets/button2.png"></center>
     </div>
 </aside>

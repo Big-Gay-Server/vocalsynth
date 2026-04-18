@@ -1,7 +1,7 @@
 /* GLOBAL STUFF */
 * {
 box-sizing: border-box;
-cursor: url('cursor.cur'), auto;
+cursor: url('/_assets/cursor.cur'), auto;
 }
 
 /* this is how the rem measurements scale */
@@ -14,7 +14,7 @@ cursor: url('cursor.cur'), auto;
 body {
     margin: 0;
     padding: 0;
-    background: #fce5ed url("merisgay_part_2_bg.png");
+    background: #fce5ed url("/_assets/merisgay_part_2_bg.png");
     font-family: 'Belleza', sans-serif;
     color: #be8dd4;
     letter-spacing: 0.063rem;
@@ -67,7 +67,7 @@ a {
 /* HEADER / LOGO */
 #header {
     width: 100%;
-    background: url("maikory wallpaper.png") no-repeat center;
+    background: url("/_assets/maikory wallpaper.png") no-repeat center;
     background-size: 115%;
     padding-top: 1rem;
     min-height: 300px;
