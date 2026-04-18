@@ -35,6 +35,8 @@ if ($urlchara) { // if url has a character specified,
         include 'charapage.php'; // show the character page
     }
 } else {
+    $allCharacters = $vbmanager->getCharacters(); // fetch all characters
+    $charaInfo = null; // initialize character info variable
     ?>
     <h1 class="title">Children of Dust</h1>
     <center>
@@ -42,12 +44,13 @@ if ($urlchara) { // if url has a character specified,
         <a href="https://lunatine.lunarconstruct.net">Lunatine</a>
         Universe.
         <br><br>
-        <a href="merisdae"><img src="merisdae/preview inactive.png" class="vbpreview"
-                onmouseover="this.src='merisdae/preview.png';" onmouseout="this.src='merisdae/preview inactive.png'"></a>
-        <a href="canele"><img src="canele/preview inactive.png" class="vbpreview"
-                onmouseover="this.src='canele/preview.png';" onmouseout="this.src='canele/preview inactive.png'"></a>
-        <a href="yudora"><img src="yudora/preview inactive.png" class="vbpreview"
-                onmouseover="this.src='yudora/preview.png';" onmouseout="this.src='yudora/preview inactive.png'"></a>
+        <?php foreach ($allCharacters as $c) {
+            if ($c['childrenofdust'] === true) { ?>
+                <a href="<?= $c['slug'] ?>"><img src="<?= $c['slug'] ?>/preview inactive.png" class="vbpreview"
+                    onmouseover="this.src='<?= $c['slug'] ?>/preview.png';" onmouseout="this.src='<?= $c['slug'] ?>/preview inactive.png'"></a>
+                <?php }
+        } ?>
+            
     </center>
     <br />
 
@@ -55,15 +58,14 @@ if ($urlchara) { // if url has a character specified,
     <h1 class="title">Other Voicebanks</h1>
     <center>
         Other voicebanks managed by me, but not part of Lunatine.<br><br>
-        <a href="hawa"><img src="hawa/preview inactive.png" class="vbpreview" onmouseover="this.src='hawa/preview.png';"
-                onmouseout="this.src='hawa/preview inactive.png'"></a>
-        <a href="ayda"><img src="ayda/preview inactive.png" class="vbpreview" onmouseover="this.src='ayda/preview.png';"
-                onmouseout="this.src='ayda/preview inactive.png'"></a>
-        <a href="aurora"><img src="aurora/preview inactive.png" class="vbpreview"
-                onmouseover="this.src='aurora/preview.png';" onmouseout="this.src='aurora/preview inactive.png'"></a>
-        <a href="boofer"><img src="boofer/preview inactive.png" class="vbpreview"
-                onmouseover="this.src='boofer/preview.png';" onmouseout="this.src='boofer/preview inactive.png'"></a>
+        <?php foreach ($allCharacters as $c) {
+            if ($c['childrenofdust'] === false) { ?>
+                <a href="<?= $c['slug'] ?>"><img src="<?= $c['slug'] ?>/preview inactive.png" class="vbpreview"
+                    onmouseover="this.src='<?= $c['slug'] ?>/preview.png';" onmouseout="this.src='<?= $c['slug'] ?>/preview inactive.png'"></a>
+                <?php }
+        } ?>
     </center>
     <?php
-}
+    }
+
 ?>

@@ -19,8 +19,21 @@
               "icon": "lucide-table",
               "title": "___covers"
             }
+          },
+          {
+            "id": "982a1095e7a025d5",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "covers/mycovers/thumb 3.png"
+              },
+              "icon": "lucide-image",
+              "title": "thumb 3"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -181,10 +194,12 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "2b992776e4930e47",
+  "active": "169395bcf361c05b",
   "lastOpenFiles": [
+    "covers/___covers.base",
+    "covers/mycovers",
     "covers/take2.php",
-    "covers/神っぽいな - God-ish/thumb 2.png",
+    "covers/mycovers/神っぽいな - God-ish/thumb 2.png",
     "composer.phar",
     "composer.lock",
     "composer.json",
@@ -194,8 +209,6 @@
     "vendor/symfony/var-exporter/ProxyHelper.php",
     "vendor/symfony/var-exporter/LazyProxyTrait.php",
     "vendor/symfony/var-exporter/LazyObjectInterface.php",
-    "vendor/symfony/var-exporter/LazyGhostTrait.php",
-    "vendor/symfony/var-exporter/LICENSE",
     "vendor/symfony/var-exporter/CHANGELOG.md",
     "vendor/symfony/service-contracts/README.md",
     "vendor/symfony/service-contracts/CHANGELOG.md",
@@ -213,6 +226,6 @@
     "vendor/psr/cache/CHANGELOG.md",
     "vendor/mustangostang/spyc/README.md",
     "vendor/erusev/parsedown/README.md",
-    "covers/ラッグトレイン - Lagtrain/ラッグトレイン - Lagtrain.md"
+    "covers/mycovers/ラッグトレイン - Lagtrain/ラッグトレイン - Lagtrain.md"
   ]
 }

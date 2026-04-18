@@ -14,11 +14,6 @@ class CoverManager {
         $this->loadVoicebankMap();
     }
 
-    private function stripAccents(string $str): string {
-    // This function replaces accented characters with their plain counterparts
-    return iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $str);
-}
-
     // this loads the voicebank map - aka i think an array with all covers belonging to each voicebank
     private function loadVoicebankMap(): void {
         $all_vbs = glob($this->vb_base_path . '/*/*/{info.yml,info.yaml}', GLOB_BRACE) ?: [];
@@ -39,7 +34,7 @@ class CoverManager {
     // this part gets all the cover data from the yaml files
     public function getCovers(array $filters = []): array {
         $all_covers = [];
-        $folders = glob($_SERVER['DOCUMENT_ROOT'] . '/covers/*/', GLOB_ONLYDIR);
+        $folders = glob($_SERVER['DOCUMENT_ROOT'] . '/covers/mycovers/*/', GLOB_ONLYDIR);
         
         foreach ($folders as $song_folder) {
             $files = glob($song_folder . '*.md');
