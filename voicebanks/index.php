@@ -37,7 +37,7 @@ if ($urlchara) { // if url has a character specified,
 } else {
     $allCharacters = $vbmanager->getCharacters(); // fetch all characters
     $charaInfo = null; // initialize character info variable
-    ?>
+?>
     <h1 class="title">Children of Dust</h1>
     <center>
         A group of UTAU voicebanks linked to characters in the
@@ -47,10 +47,10 @@ if ($urlchara) { // if url has a character specified,
         <?php foreach ($allCharacters as $c) {
             if ($c['childrenofdust'] === true) { ?>
                 <a href="<?= $c['slug'] ?>"><img src="<?= $c['slug'] ?>/preview inactive.png" class="vbpreview"
-                    onmouseover="this.src='<?= $c['slug'] ?>/preview.png';" onmouseout="this.src='<?= $c['slug'] ?>/preview inactive.png'"></a>
-                <?php }
+                        onmouseover="this.src='<?= $c['slug'] ?>/preview.png';" onmouseout="this.src='<?= $c['slug'] ?>/preview inactive.png'"></a>
+        <?php }
         } ?>
-            
+
     </center>
     <br />
 
@@ -61,11 +61,11 @@ if ($urlchara) { // if url has a character specified,
         <?php foreach ($allCharacters as $c) {
             if ($c['childrenofdust'] === false) { ?>
                 <a href="<?= $c['slug'] ?>"><img src="<?= $c['slug'] ?>/preview inactive.png" class="vbpreview"
-                    onmouseover="this.src='<?= $c['slug'] ?>/preview.png';" onmouseout="this.src='<?= $c['slug'] ?>/preview inactive.png'"></a>
-                <?php }
+                        onmouseover="this.src='<?= $c['slug'] ?>/preview.png';" onmouseout="this.src='<?= $c['slug'] ?>/preview inactive.png'"></a>
+        <?php }
         } ?>
     </center>
-    <?php
-    }
+<?php
+}
 
 ?>

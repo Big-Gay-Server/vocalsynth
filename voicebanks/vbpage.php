@@ -26,7 +26,7 @@ require_once 'index.php';
 if ($currentvb['dllink']) {
     echo "<div class='center row' style='display: flex; justify-content: center; gap: 20px;'>";
     foreach ($currentvb['dllink'] as $dl) {
-        ?>
+?>
 
         <div class="column flex33">
             <a href="<?= htmlspecialchars($dl['url']) ?>">
@@ -34,7 +34,7 @@ if ($currentvb['dllink']) {
             </a>
         </div>
 
-        <?php
+    <?php
     }
     echo '</div>';
 }
@@ -65,7 +65,7 @@ foreach ($currentvb['subbanks'] as $sub) {
                         <img src="/_assets/<?= htmlspecialchars($dl['type']) ?> dl.png" class="columnimg">
                     </a>
                 </div>
-            <?php endforeach;
+        <?php endforeach;
         endif; ?>
     </div>
     <br>
@@ -75,7 +75,7 @@ foreach ($currentvb['subbanks'] as $sub) {
             <div class="column centervertical">
                 <?php
                 foreach ($sub['expressions'] as $expression) {
-                    ?>
+                ?>
                     <div id="<?= $sub['name'] ?>_<?= $expression['name'] ?>" class="row">
                         <div class="column expressioninfo flex33">
                             <b>
