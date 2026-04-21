@@ -201,17 +201,6 @@ class CoverManager {
         }
     }
 
-    public function coverDetails(array $covers): void {
-        if (empty($covers) || !isset($covers[0])) {
-            echo "<h1>Cover not found.</h1>";
-            return;
-        }
-        
-        $cover = $this->processCoverData($covers[0]);
-
-        echo "<h1>" . htmlspecialchars($cover['title']) . "</h1>";
-    }
-
     private function clean($str) {
         // 1. Convert to Lowercase
         $str = mb_strtolower(trim((string)$str), 'UTF-8');

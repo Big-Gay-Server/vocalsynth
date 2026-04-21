@@ -413,3 +413,7 @@ button {
         cursor: pointer;
     }
 }
+
+.credits li {
+    list-style-type: "⭐ ";
+}

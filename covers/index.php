@@ -25,10 +25,19 @@ $cover = $manager->getCovers($specific_filters);
 
 // display covers!!! so easy
 if ($requested_cover) {
-    // Check if the array is NOT empty before accessing index 0
     if (!empty($cover)) {
-        $manager->coverDetails($cover);        
-        var_dump($requested_cover); 
+        $cover_data = $manager->processCoverData($cover);
+?>
+        <h1><?= $cover_data['title'] ?></h1>
+        <br>
+        <div class='credits'>
+            <h3> ⦅ CREDITS ⦆ </h3>
+            <li> SONG: <?= $cover_data['title'] ?>
+            <li> MUSIC & LYRICS: <?= $cover_data['music & lyrics'] ?>
+        </div>
+
+<?php
+
     } else {
         echo '<h1>Cover not found</h1>';
         echo '<p><a href="?">Back to all covers</a></p>';
@@ -36,7 +45,6 @@ if ($requested_cover) {
 } else {
     echo '<h1>Covers</h1>';
     echo '<div class="covercontainer">';
-        $manager->renderGrid($all_covers);
+    $manager->renderGrid($all_covers);
     echo '</div>';
 }
-
