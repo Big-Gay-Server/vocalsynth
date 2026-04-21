@@ -25,7 +25,7 @@ $cover = $manager->getCovers($specific_filters);
 
 // display covers!!! so easy
 if ($requested_cover) {
-    $manager->coverDetails($cover);
+    $manager->coverDetails($cover[0]);
 } else {
     echo '<h1>Covers</h1>';
     echo '<div class="covercontainer">';

@@ -132,7 +132,7 @@ class CoverManager {
         return false;
     }
 
-    private function processCoverData(array $coverdata): array {
+    public function processCoverData(array $coverdata): array {
         // 1. Date Logic
         $date = isset($coverdata['date']) ? date('F j, Y', strtotime($coverdata['date'])) : '';
         $year = $coverdata['Year'] ?? '';
@@ -203,12 +203,9 @@ class CoverManager {
     public function coverDetails(array $covers): void {
         if (empty($covers)) return;
         
-        // Since getCovers returns an array of results, grab the first one
         $cover = $this->processCoverData($covers[0]);
 
         echo "<h1>" . htmlspecialchars($cover['title']) . "</h1>";
-        echo "<div class='detail-video'><iframe src='{$cover['embed_url']}'></iframe></div>";
-        // You could also add the full Markdown content here later!
     }
 
     private function clean($str) {
