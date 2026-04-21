@@ -1,5 +1,8 @@
 <h1>【UTAU カバー】 <?= $cover_data['title'] ?> 【<?= $cover_data['voicebank'] ?>】</h1>
 <br>
+<div class="video-container">
+    <iframe src="<?= $cover_data['embed_url'] ?>" frameborder="0" allowfullscreen loading="lazy"></iframe>
+</div>
 <div class='credits'>
     <h3> ⦅ CREDITS ⦆ </h3>
     <li> <b>SONG:</b> <?= $cover_data['title'] ?>
