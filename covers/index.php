@@ -25,7 +25,13 @@ $cover = $manager->getCovers($specific_filters);
 
 // display covers!!! so easy
 if ($requested_cover) {
-    $manager->coverDetails($cover[0]);
+    // Check if the array is NOT empty before accessing index 0
+    if (!empty($cover)) {
+        $manager->coverDetails($cover[0]);
+    } else {
+        echo '<h1>Cover not found</h1>';
+        echo '<p><a href="?">Back to all covers</a></p>';
+    }
 } else {
     echo '<h1>Covers</h1>';
     echo '<div class="covercontainer">';
