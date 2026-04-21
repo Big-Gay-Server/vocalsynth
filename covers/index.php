@@ -32,8 +32,8 @@ if ($requested_cover) {
         <br>
         <div class='credits'>
             <h3> ⦅ CREDITS ⦆ </h3>
-            <li> SONG: <?= $cover_data['title'] ?> </li>
-            <li> MUSIC & LYRICS: <?= $cover_data['raw']['music & lyrics'] ?> </li>
+            <li> <b>SONG:</b> <?= $cover_data['title'] ?> </li>
+            <li> <b>MUSIC & LYRICS:</b> <?= $cover_data['byline'] ?> </li>
         </div>
 
 <?php
