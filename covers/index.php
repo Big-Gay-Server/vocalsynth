@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/covermanager.php';
 // initialize the class
 $manager = new CoverManager();
 
-$requested_cover = "destiny";
+$requested_cover = ($_GET['song'] ?? null);
 
 // set filters
 $default_filters = [

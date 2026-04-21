@@ -198,10 +198,13 @@ class CoverManager {
                 $video_link
             );
             $video = !empty($video_link) ? '<div class="video-container"><iframe src="' . htmlspecialchars($embed_url) . '" frameborder="0" allowfullscreen loading="lazy"></iframe></div>' : '';
+            
+            $songId = urlencode($coverdata['en/rom name'] ?? 'unknown');
+            
                 ?>
             <div class="coverbox">
                 <?=$video ?> 
-                <a href="<?=$coverpage ?>"><h3><?= htmlspecialchars($title) ?></h3></a>
+                <a href="?song=<?= $songId ?>"><h3><?= htmlspecialchars($title) ?></h3></a>
                 <h4><?= $vb_display ?></h4> <!-- Removed the outer <a> tag so each name has its own link -->
                 <h5><?= htmlspecialchars($byline) ?></h5>
                 <h6><?= htmlspecialchars($date) ?></h6>
