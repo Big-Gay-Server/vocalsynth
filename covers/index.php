@@ -41,7 +41,7 @@ if ($requested_cover) {
             <li> <b>ORIGINAL:</b>
                 <?php
                 $og = $cover_data['raw']['original vocals'] ?? 'N/A';
-                echo htmlspecialchars(is_array($ml) ? implode(', ', $ml) : $ml);
+                echo htmlspecialchars(is_array($og) ? implode(', ', $og) : $og);
                 ?>
         </div>
 
