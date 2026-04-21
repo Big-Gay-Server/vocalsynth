@@ -201,7 +201,10 @@ class CoverManager {
     }
 
     public function coverDetails(array $covers): void {
-        if (empty($covers)) return;
+        if (empty($covers) || !isset($covers[0])) {
+            echo "<h1>Cover not found.</h1>";
+            return;
+        }
         
         $cover = $this->processCoverData($covers[0]);
 
