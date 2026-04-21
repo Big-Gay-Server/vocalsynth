@@ -174,6 +174,7 @@ class CoverManager {
             'url_slug' => urlencode($romname ?: $origname),
             'date' => $date,
             'vb_display' => implode(', ', $vb_links),
+            'voicebank' => implode(', ', $vb_data),
             'byline' => $byline,
             'embed_url' => $embed_url,
             'file_path' => $coverdata['file_path'] ?? '',

@@ -28,7 +28,7 @@ if ($requested_cover) {
     if (!empty($cover)) {
         $cover_data = $manager->processCoverData($cover[0]);
 ?>
-        <h1>【UTAU カバー】 <?= $cover_data['title'] ?> 【<?= $cover_data['vb_display'] ?>】</h1>
+        <h1>【UTAU カバー】 <?= $cover_data['title'] ?> 【<?= $cover_data['voicebank'] ?>】</h1>
         <br>
         <div class='credits'>
             <h3> ⦅ CREDITS ⦆ </h3>
