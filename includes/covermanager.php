@@ -132,89 +132,83 @@ class CoverManager {
         return false;
     }
 
+    private function processCoverData(array $coverdata): array {
+        // 1. Date Logic
+        $date = isset($coverdata['date']) ? date('F j, Y', strtotime($coverdata['date'])) : '';
+        $year = $coverdata['Year'] ?? '';
+
+        // 2. Title Logic
+        $origname = $coverdata['orig name'] ?? '';
+        $romname = $coverdata['en/rom name'] ?? '';
+        if (!empty($origname) && !empty($romname)) {
+            $song = ($origname == $romname) ? $origname : "$origname / $romname";
+        } else {
+            $song = $origname ?: $romname ?: 'Unknown';
+        }
+        $isMulticover = $coverdata['is_multicover'] ?? false;
+        $full_title = $isMulticover ? "$song ($year ver)" : $song;
+
+        // 3. Voicebank Logic
+        $vb_data = $coverdata['voicebank'] ?? '';
+        $vb_array = is_array($vb_data) ? $vb_data : [$vb_data];
+        $vb_links = [];
+        foreach ($vb_array as $vb_item) {
+            $link = $this->vb_map[strtolower(trim($vb_item))] ?? '';
+            $vb_links[] = $link ? '<a href="' . $link . '">' . htmlspecialchars($vb_item) . '</a>' : htmlspecialchars($vb_item);
+        }
+
+        // 4. Byline Logic
+        $artist = is_array($coverdata['music & lyrics'] ?? '') ? implode(', ', $coverdata['music & lyrics']) : ($coverdata['music & lyrics'] ?? '');
+        $ogvo = is_array($coverdata['original vocals'] ?? '') ? implode(', ', $coverdata['original vocals']) : ($coverdata['original vocals'] ?? '');
+        $byline = ($artist == $ogvo) ? $artist : "$artist ft. $ogvo";
+
+        // 5. Video Logic
+        $raw_video = $coverdata['video link'] ?? '';
+        $video_link = is_array($raw_video) ? ($raw_video[0] ?? '') : $raw_video;
+        $embed_url = preg_replace("/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([^\s&]+)/", "https://youtube.com/embed/$1", $video_link);
+
+        // Return a nice, clean object
+        return [
+            'title' => $full_title,
+            'url_slug' => urlencode($romname ?: $origname),
+            'date' => $date,
+            'vb_display' => implode(', ', $vb_links),
+            'byline' => $byline,
+            'embed_url' => $embed_url,
+            'file_path' => $coverdata['file_path'] ?? '',
+            'raw' => $coverdata // keep the original just in case
+        ];
+    }
+
     // this part displays the html.
     public function renderGrid(array $covers): void {
-        foreach ($covers as $coverdata) {
-            // link logic
-            $coverpage = $coverdata['file_path'] ?? ''; // defines link to cover page
-            
-            // date logic
-            $dateformat = 'F j, Y';
-            $date = isset($coverdata['date']) ? date($dateformat, strtotime($coverdata['date'])) : '';
-            $year = $coverdata['Year'] ?? '';
-
-            // song title logic
-            $origname = $coverdata['orig name'] ?? ''; // defines the original language name of song
-            $romname = $coverdata['en/rom name'] ?? ''; // defines the english/romanized name of song
-            $namessame = $origname == $romname ? true : false; // if they're the same, set $namessame to false for formatting
-            if (!empty($origname) && !empty($romname)) { // defines the complete song name
-                $song = $namessame ? $origname : "$origname / $romname";
-            } else {
-                $song = '';
-            }
-            // concatenates the title line, adding the year if there are multiple covers of the song.
-            $isMulticover = $coverdata['is_multicover'] ?? false;
-            $title = $isMulticover ? $song . " (" . $year . " ver)" : $song;
-
-            // voicebank logic
-            $vb_data = $coverdata['voicebank'] ?? ''; // grab vb data
-            
-            
-            $vb_array = is_array($vb_data) ? $vb_data : [$vb_data]; // convert to array if it isn't one already
-            $vb_links_html = [];
-
-            foreach ($vb_array as $vb_item) {        
-                $link = $this->vb_map[strtolower(trim($vb_item))] ?? ''; // look up the vb
-                
-                if ($link) {
-                    // If we found a match, make it a link
-                    $vb_links_html[] = '<a href="' . $link . '">' . htmlspecialchars($vb_item) . '</a>';
-                } else {
-                    // If no match, just show the plain text
-                    $vb_links_html[] = htmlspecialchars($vb_item);
-                }
-            }
-            $vb_display = implode(', ', $vb_links_html);
-
-            // original song info logic
-            $artist_data = $coverdata['music & lyrics'] ?? '';
-            $artist = is_array($artist_data) ? implode(', ', $artist_data) : $artist_data;
-
-            $ogvo_data = $coverdata['original vocals'] ?? '';
-            $ogvo = is_array($ogvo_data) ? implode(', ', $ogvo_data) : $ogvo_data;
-
-            $byline = ($artist == $ogvo) ? $artist : $artist . ' ft. ' . $ogvo;
-
-            $lyric_data = $coverdata['lyric for desc'] ?? '';
-            $lyric = is_array($lyric_data) ? implode(', ', $lyric_data): $lyric_data;
-            $lyric_format = !empty($lyric) ? '"' . $lyric . '"' : '';
-            
-            // video logic
-            $raw_video = $coverdata['video link'] ?? '';
-            $video_link = is_array($raw_video) ? ($raw_video[0] ?? '') : $raw_video;
-            $embed_url = preg_replace(
-                "/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([^\s&]+)/",
-                "https://youtube.com/embed/$1",
-                $video_link
-            );
-            $video = !empty($video_link) ? '<div class="video-container"><iframe src="' . htmlspecialchars($embed_url) . '" frameborder="0" allowfullscreen loading="lazy"></iframe></div>' : '';
-            
-            $songId = urlencode($coverdata['en/rom name'] ?? 'unknown');
-            
-                ?>
+        foreach ($covers as $raw_data) {
+            $cover = $this->processCoverData($raw_data);
+            ?>
             <div class="coverbox">
-                <?=$video ?> 
-                <a href="?song=<?= $songId ?>"><h3><?= htmlspecialchars($title) ?></h3></a>
-                <h4><?= $vb_display ?></h4> <!-- Removed the outer <a> tag so each name has its own link -->
-                <h5><?= htmlspecialchars($byline) ?></h5>
-                <h6><?= htmlspecialchars($date) ?></h6>
+                <?php if ($cover['embed_url']): ?>
+                    <div class="video-container">
+                        <iframe src="<?= $cover['embed_url'] ?>" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                <?php endif; ?>
+                <a href="?song=<?= $cover['url_slug'] ?>"><h3><?= htmlspecialchars($cover['title']) ?></h3></a>
+                <h4><?= $cover['vb_display'] ?></h4>
+                <h5><?= htmlspecialchars($cover['byline']) ?></h5>
+                <h6><?= htmlspecialchars($cover['date']) ?></h6>
             </div>
             <?php
         }
     }
 
-    public function coverDetails(array $cover): void {
-        echo $cover['video'];
+    public function coverDetails(array $covers): void {
+        if (empty($covers)) return;
+        
+        // Since getCovers returns an array of results, grab the first one
+        $cover = $this->processCoverData($covers[0]);
+
+        echo "<h1>" . htmlspecialchars($cover['title']) . "</h1>";
+        echo "<div class='detail-video'><iframe src='{$cover['embed_url']}'></iframe></div>";
+        // You could also add the full Markdown content here later!
     }
 
     private function clean($str) {
