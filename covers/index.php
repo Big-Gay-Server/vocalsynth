@@ -32,8 +32,12 @@ if ($requested_cover) {
         <br>
         <div class='credits'>
             <h3> ⦅ CREDITS ⦆ </h3>
-            <li> <b>SONG:</b> <?= $cover_data['title'] ?> </li>
-            <li> <b>MUSIC & LYRICS:</b> <?= $cover_data['byline'] ?> </li>
+            <li> <b>SONG:</b> <?= $cover_data['title'] ?>
+            <li> <b>MUSIC & LYRICS:</b>
+                <?php
+                $ml = $cover_data['raw']['music & lyrics'] ?? 'N/A';
+                echo htmlspecialchars(is_array($ml) ? implode(', ', $ml) : $ml);
+                ?>
         </div>
 
 <?php
