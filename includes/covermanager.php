@@ -68,10 +68,11 @@ class CoverManager {
 
                 // filter by title (checks both original and romanized names)
                 if (isset($filters['title'])) {
-                    $searchTitle = strtolower($filters['title']);
-                    $titleMatch = (str_contains(strtolower($cover['orig name'] ?? ''), $searchTitle) || 
-                                str_contains(strtolower($cover['en/rom name'] ?? ''), $searchTitle));
+                    $searchTitle = mb_strtolower(trim($filters['title']), 'UTF-8');
+                    $orig = mb_strtolower($cover['orig name'] ?? '', 'UTF-8');
+                    $rom = mb_strtolower($cover['en/rom name'] ?? '', 'UTF-8');
                     
+                    $titleMatch = (str_contains($orig, $searchTitle) || str_contains($rom, $searchTitle));
                     $match = $match && $titleMatch;
                 }
 
