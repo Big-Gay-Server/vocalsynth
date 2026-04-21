@@ -16,7 +16,7 @@
     <li> <b>UTAU:</b> <?= $cover_data['vb_display'] ?>
     <li> <b>UST:</b>
         <?php
-        $ust = $cover_data['raw']['ust'] ?? 'N/A';
+        $ust = $cover_data['raw']['UST'] ?? 'N/A';
         echo htmlspecialchars(is_array($ust) ? implode(', ', $ust) : $ust);
         ?>
 </div>
