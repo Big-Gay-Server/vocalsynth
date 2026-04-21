@@ -6,18 +6,26 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/covermanager.php';
 // initialize the class
 $manager = new CoverManager();
 
+$requested_cover = "destiny";
+
 // set filters
-$filters = [
+$default_filters = [
     'requireVideo' => true,
     'minYear' => 2016,
-    'title' => 'destiny',
+];
+
+$specific_filters = [
+    'title' => $requested_cover,
 ];
 
 // fetch covers
-$all_covers = $manager->getCovers($filters); 
+$all_covers = $manager->getCovers($default_filters);
+
+$cover = $manager->getCovers($specific_filters); 
 
 // display covers!!! so easy
 echo '<h1>Covers</h1>';
 echo '<div class="covercontainer">';
+    $manager->renderGrid($cover);
     $manager->renderGrid($all_covers); 
 echo '</div>';
