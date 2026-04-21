@@ -14,4 +14,9 @@
         echo htmlspecialchars(is_array($og) ? implode(', ', $og) : $og);
         ?>
     <li> <b>UTAU:</b> <?= $cover_data['vb_display'] ?>
+    <li> <b>UST:</b>
+        <?php
+        $ust = $cover_data['raw']['ust'] ?? 'N/A';
+        echo htmlspecialchars(is_array($ust) ? implode(', ', $ust) : $ust);
+        ?>
 </div>
