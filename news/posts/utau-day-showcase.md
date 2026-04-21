@@ -10,4 +10,4 @@ Merisdae was accepted into the UTAU Day 2026 Voicebank showcase! This is being p
 
 You can browse the gallery of other voicebanks that qualified, and vote for your top 5 favorites!
 
-[Please vote for Merisdae!](https://events.expressivelabs.net/ref/BfqiWtIm5a1Bko1clQ8wve4QhlsUylD7)
+### [Please vote for Merisdae!](https://events.expressivelabs.net/ref/BfqiWtIm5a1Bko1clQ8wve4QhlsUylD7)
