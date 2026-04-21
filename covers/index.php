@@ -38,6 +38,11 @@ if ($requested_cover) {
                 $ml = $cover_data['raw']['music & lyrics'] ?? 'N/A';
                 echo htmlspecialchars(is_array($ml) ? implode(', ', $ml) : $ml);
                 ?>
+            <li> <b>ORIGINAL:</b>
+                <?php
+                $og = $cover_data['raw']['original vocals'] ?? 'N/A';
+                echo htmlspecialchars(is_array($ml) ? implode(', ', $ml) : $ml);
+                ?>
         </div>
 
 <?php
