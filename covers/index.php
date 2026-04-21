@@ -27,7 +27,7 @@ $cover = $manager->getCovers($specific_filters);
 if ($requested_cover) {
     // Check if the array is NOT empty before accessing index 0
     if (!empty($cover)) {
-        $manager->coverDetails($cover[0]);        
+        $manager->coverDetails($cover);        
         var_dump($requested_cover); 
     } else {
         echo '<h1>Cover not found</h1>';
