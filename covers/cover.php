@@ -19,4 +19,9 @@
         $ust = $cover_data['raw']['UST'] ?? 'N/A';
         echo htmlspecialchars(is_array($ust) ? implode(', ', $ust) : $ust);
         ?>
+    <li> <b>TUNING:</b>
+        <?php
+        $tn = $cover_data['raw']['tuning'] ?? 'N/A';
+        echo htmlspecialchars(is_array($tn) ? implode(', ', $tn) : $tn);
+        ?>
 </div>
