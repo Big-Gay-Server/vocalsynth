@@ -213,7 +213,7 @@ class CoverManager {
         }
     }
 
-    public function coverDetails($cover): void {
+    public function coverDetails(array $cover): void {
         echo $cover['video'];
     }
 
