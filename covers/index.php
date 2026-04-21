@@ -30,6 +30,7 @@ if ($requested_cover) {
         $manager->coverDetails($cover[0]);
     } else {
         echo '<h1>Cover not found</h1>';
+        var_dump($requested_cover); 
         echo '<p><a href="?">Back to all covers</a></p>';
     }
 } else {
