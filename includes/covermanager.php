@@ -66,6 +66,15 @@ class CoverManager {
                     $match = $match && in_array($filters['voicebank'], $vbs_in_cover);
                 }
 
+                // filter by title (checks both original and romanized names)
+                if (isset($filters['title'])) {
+                    $searchTitle = strtolower($filters['title']);
+                    $titleMatch = (str_contains(strtolower($cover['orig name'] ?? ''), $searchTitle) || 
+                                str_contains(strtolower($cover['en/rom name'] ?? ''), $searchTitle));
+                    
+                    $match = $match && $titleMatch;
+                }
+
                 // filter by year
                 if (isset($filters['year'])) {
                     $match = $match && ($cover['Year'] == $filters['year']);

@@ -10,6 +10,7 @@ $manager = new CoverManager();
 $filters = [
     'requireVideo' => true,
     'minYear' => 2016,
+    'title' => 'destiny',
 ];
 
 // fetch covers
