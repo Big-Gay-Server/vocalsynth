@@ -27,7 +27,7 @@ $cover = $manager->getCovers($specific_filters);
 if ($requested_cover) {
     if (!empty($cover)) {
         $cover_data = $manager->processCoverData($cover[0]);
-        include '/cover.php';
+        include 'cover.php';
     } else {
         echo '<h1>Cover not found</h1>';
         echo '<p><a href="?">Back to all covers</a></p>';
