@@ -13,4 +13,5 @@
         $og = $cover_data['raw']['original vocals'] ?? 'N/A';
         echo htmlspecialchars(is_array($og) ? implode(', ', $og) : $og);
         ?>
+    <li> <b>UTAU:</b> <?= $cover_data['vb_display'] ?>
 </div>
