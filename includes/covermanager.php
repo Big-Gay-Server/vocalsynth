@@ -212,6 +212,11 @@ class CoverManager {
             <?php
         }
     }
+
+    public function coverDetails($cover): void {
+        echo $cover['video'];
+    }
+
     private function clean($str) {
         // 1. Convert to Lowercase
         $str = mb_strtolower(trim((string)$str), 'UTF-8');

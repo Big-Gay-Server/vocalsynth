@@ -24,11 +24,12 @@ $all_covers = $manager->getCovers($default_filters);
 $cover = $manager->getCovers($specific_filters);
 
 // display covers!!! so easy
-echo '<h1>Covers</h1>';
-echo '<div class="covercontainer">';
 if ($requested_cover) {
-    $manager->renderGrid($cover);
+    $manager->coverDetails($cover);
 } else {
-    $manager->renderGrid($all_covers);
+    echo '<h1>Covers</h1>';
+    echo '<div class="covercontainer">';
+        $manager->renderGrid($all_covers);
+    echo '</div>';
 }
-echo '</div>';
+
