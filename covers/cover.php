@@ -1,5 +1,4 @@
 <h1>【UTAU カバー】 <?= $cover_data['title'] ?> 【<?= $cover_data['voicebank'] ?>】</h1>
-<br>
 <div class="video-container">
     <iframe src="<?= $cover_data['embed_url'] ?>" frameborder="0" allowfullscreen loading="lazy"></iframe>
 </div>
@@ -26,5 +25,10 @@
         <?php
         $tn = $cover_data['raw']['tuning'] ?? 'N/A';
         echo htmlspecialchars(is_array($tn) ? implode(', ', $tn) : $tn);
+        ?>
+    <li> <b>MIX:</b>
+        <?php
+        $mix = $cover_data['raw']['mix'] ?? 'N/A';
+        echo htmlspecialchars(is_array($mix) ? implode(', ', $mix) : $mix);
         ?>
 </div>
