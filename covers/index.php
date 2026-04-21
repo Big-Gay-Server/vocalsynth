@@ -26,7 +26,7 @@ $cover = $manager->getCovers($specific_filters);
 // display covers!!! so easy
 if ($requested_cover) {
     if (!empty($cover)) {
-        $cover_data = $manager->processCoverData($cover);
+        $cover_data = $manager->processCoverData($cover[0]);
 ?>
         <h1><?= $cover_data['title'] ?></h1>
         <br>
