@@ -455,7 +455,7 @@ button {
     display: inline-block;
     padding: 2px 10px;
     border-radius: 15px; /* Rounded pill look */
-    font-size: 0.65em;
+    font-size: 1em;
     font-weight: bold;
     text-transform: uppercase;
     color: #fff;
