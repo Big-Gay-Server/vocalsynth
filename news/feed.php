@@ -93,7 +93,7 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>';
         $date = date(DATE_RSS, $item['timestamp']);
         
         if ($item['type'] === 'cover') {
-            $title = "【UTAU カバー】 " . $item['title'] . "【" . $item['voicebank'] . "】";
+            $title = "[COVER] " . "【UTAU カバー】 " . $item['title'] . "【" . $item['voicebank'] . "】";
             $link = $item['link'];
             $description = htmlspecialchars($item['description']);
         } else {
@@ -111,7 +111,7 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>';
                 $postTitle = ucwords(str_replace(['.html', '.md', '_', '-'], ['', '', ' ', ' '], $filename));
             }
 
-            $title = "📰 [NEWS] " . htmlspecialchars($postTitle);
+            $title = "[NEWS] " . htmlspecialchars($postTitle);
             $clean_name = str_replace(['.md', '.html'], '', $filename);
             $link = $site_url . '/news/' . $clean_name;
 
