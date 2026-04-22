@@ -319,20 +319,26 @@ a {
     text-align: center;
 }
 
-#ust-table tbody tr {
-    display: block; /* Allows margin, padding, and radius to work */
-    margin: 10px;
-    background-color: #1f033849;
-    border-radius: 20px;
-    padding: 10px;
-    border: 1px solid #62a8d3;
-    filter: drop-shadow(4px 4px 4px rgb(0, 0, 0, 0.486));
-    box-sizing: border-box;
+#ust-table {
+    border-collapse: separate; 
+    border-spacing: 0 10px; /* Use this for the "margin" effect between rows */
 }
 
-/* You will also likely need this to keep cells side-by-side */
 #ust-table tbody tr td {
-    display: inline-block; 
+    background-color: #1f033849;
+    border-top: 1px solid #62a8d3;
+    border-bottom: 1px solid #62a8d3;
+    padding: 10px;
+}
+
+/* Apply radius only to the ends of the row */
+#ust-table tbody tr td:first-child {
+    border-left: 1px solid #62a8d3;
+    border-radius: 20px 0 0 20px;
+}
+#ust-table tbody tr td:last-child {
+    border-right: 1px solid #62a8d3;
+    border-radius: 0 20px 20px 0;
 }
 
 button {
