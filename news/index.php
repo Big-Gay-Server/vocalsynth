@@ -39,8 +39,8 @@
             html += `
                 <li class="rss-item">
                     <div class="rss-header">
-                        ${tagHtml}
                         <a href="${link}" class="rss-title"><strong>${displayTitle}</strong></a>
+                        ${tagHtml} 
                     </div>
                     <div class="rss-date">${date}</div>
                     <div class="rss-preview">${description}</div>
