@@ -28,7 +28,7 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>';
     $covers = $covermanager->getCovers($default_filters);
 
     $all_posts = [];
-    foreach ($files as $file) {
+    foreach ($posts as $file) {
         $raw_content = file_get_contents($file);
         $parts = explode('---', $raw_content, 3);
         
