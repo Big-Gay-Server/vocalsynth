@@ -75,8 +75,8 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>';
         $cover_posts[] = [
             'type' => 'cover', // Add this indicator
             'timestamp' => strtotime($raw_cover['date'] ?? 'now'),
-            'title' => $processed['title'],
-            'link' => $site_url . '/covers/?song=' . $processed['url_slug'],
+            'title' => "【UTAU カバー】 " . $processed['title'] . "【" . $processed['vb_display'] . "】",
+            'link' => $site_url . '/covers?song=' . $processed['url_slug'],
             'description' => "New Cover: " . $processed['title'] . " ft. " . $processed['vb_display']
         ];
     }
