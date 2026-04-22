@@ -417,3 +417,64 @@ button {
 .credits li {
     list-style-type: "⟡ ";
 }
+
+/* Container and List */
+.rss-list {
+    list-style: none;
+    padding: 0;
+}
+
+.rss-item {
+    margin-bottom: 30px;
+}
+
+/* The Tags */
+.rss-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin-right: 8px;
+    color: #fff;
+}
+
+.tag-cover {
+    background-color: #be8dd4; /* Purple for covers */
+}
+
+.tag-news {
+    background-color: #e29b31; /* Orange for news */
+}
+
+/* Typography */
+.rss-title {
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+.rss-date {
+    margin-bottom: 5px;
+    font-size: 0.85em;
+    opacity: 0.8;
+}
+
+.rss-preview {
+    color: #be8dd4;
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.rss-read-more {
+    font-size: 0.8em;
+    color: #e29b31;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.rss-read-more:hover {
+    text-decoration: underline;
+}

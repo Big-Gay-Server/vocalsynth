@@ -18,24 +18,33 @@
 
         let html = '<ul class="rss-list">';
         items.forEach(el => {
-            const title = el.querySelector("title").textContent;
+            const fullTitle = el.querySelector("title").textContent;
             const link = el.querySelector("link").textContent;
             const date = new Date(el.querySelector("pubDate").textContent).toLocaleDateString();
-            
-            // 1. Grab the description from the XML
             const description = el.querySelector("description") ? el.querySelector("description").textContent : "";
+
+            // This regex looks for [TEXT] and separates it from the rest
+            // match[1] = the tag (COVER/NEWS), match[2] = the actual title
+            const tagMatch = fullTitle.match(/^.*\[(.*?)\]\s*(.*)$/);
             
+            let displayTitle = fullTitle;
+            let tagHtml = '';
+
+            if (tagMatch) {
+                const tagType = tagMatch[1].toLowerCase(); // "cover" or "news"
+                tagHtml = `<span class="rss-tag tag-${tagType}">${tagMatch[1]}</span>`;
+                displayTitle = tagMatch[2];
+            }
+
             html += `
-                <li style="margin-bottom: 30px;">
-                    <a href="${link}"><strong>${title}</strong></a>
-                    <div class="rss-date" style="margin-bottom: 5px;">${date}</div>
-                    
-                    <!-- 2. Display the preview text -->
-                    <div class="rss-preview" style="color: #be8dd4; font-size: 0.9em; line-height: 1.4;">
-                        ${description}
+                <li class="rss-item">
+                    <div class="rss-header">
+                        ${tagHtml}
+                        <a href="${link}" class="rss-title"><strong>${displayTitle}</strong></a>
                     </div>
-                    
-                    <a href="${link}" style="font-size: 0.8em; color: #e29b31; text-transform: uppercase;">Read Full Post →</a>
+                    <div class="rss-date">${date}</div>
+                    <div class="rss-preview">${description}</div>
+                    <a href="${link}" class="rss-read-more">Read Full Post →</a>
                 </li>`;
         });
         html += '</ul>';
