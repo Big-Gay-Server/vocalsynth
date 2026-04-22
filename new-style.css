@@ -317,6 +317,9 @@ a {
 
 #ust-table tr {
     text-align: center;
+}
+
+#ust-table {
     background-color: #1f033849;
     border-radius: 20px;
     padding: 10px;
