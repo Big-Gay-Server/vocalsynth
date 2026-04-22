@@ -77,7 +77,7 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>';
             'timestamp' => strtotime($raw_cover['date'] ?? 'now'),
             'title' => $processed['title'],
             'link' => $site_url . '/covers/?song=' . $processed['url_slug'],
-            'description' => "New Cover: " . $processed['title'] . " ft. " . $processed['byline']
+            'description' => "New Cover: " . $processed['title'] . " ft. " . $processed['vb_display']
         ];
     }
 
