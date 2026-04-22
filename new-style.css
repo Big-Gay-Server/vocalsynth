@@ -324,10 +324,10 @@ a {
 
 /* Force each "column" to have a specific width so they line up */
 /* Adjust these percentages to fit your text */
-#ust-table th:nth-child(1), #ust-table td:nth-child(1) { width: 25%; } /* Download */
+#ust-table th:nth-child(1), #ust-table td:nth-child(1) { width: 15%; } /* Download */
 #ust-table th:nth-child(2), #ust-table td:nth-child(2) { width: 25%; } /* Song Name */
 #ust-table th:nth-child(3), #ust-table td:nth-child(3) { width: 25%; } /* Original Artist */
-#ust-table th:nth-child(4), #ust-table td:nth-child(4) { width: 10%; } /* format */
+#ust-table th:nth-child(4), #ust-table td:nth-child(4) { width: 15%; } /* format */
 #ust-table th:nth-child(6), #ust-table td:nth-child(5) { width: 15%; } /* Date */
 
 #ust-table tbody tr {
