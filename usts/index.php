@@ -45,7 +45,7 @@
                         echo '<td><a href="./downloads/' . ($data['folder'] ?? '') . '/' . ($data['dllink'] ?? '') . '"><button id="ustdl">download</button></a></td>';
                         echo '<td>' . htmlspecialchars($data['name'] ?? 'Unknown') . '</td>';
                         echo '<td>' . htmlspecialchars($data['artist'] ?? 'Unknown') . '</td>';
-                        echo '<td>' . htmlspecialchars($data['language'] ?? 'N/A') . htmlspecialchars($data['format'] ?? 'N/A') . '</td>';
+                        echo '<td>' . htmlspecialchars($data['language'] ?? 'N/A') . '<br>' . htmlspecialchars($data['format'] ?? 'N/A') . '</td>';
                         echo '<td>' . htmlspecialchars($data['date'] ?? 'N/A') . '</td>';
                         echo '</tr>';
                     }
