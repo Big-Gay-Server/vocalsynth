@@ -345,7 +345,7 @@ a {
 #ust-table tbody tr:hover {
     background: #350c5c;
     filter: drop-shadow(0px 0px 8px #b98029);
-    animation: pulse .5s infinite alternate ease-in-out;
+    animation: pulse .5s ease-in-out;
     cursor: pointer;
 }
 
