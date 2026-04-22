@@ -9,7 +9,6 @@ class ParsedownAudio extends Parsedown {
     }
 
     protected function inlineAudio($Excerpt) {
-        // Look for the ![[filename.wav]] pattern
         if (preg_match('/^!\[\[(.+\.(wav|mp3|ogg))\]\]/', $Excerpt['text'], $matches)) {
             return [
                 'extent' => strlen($matches[0]),
@@ -17,8 +16,11 @@ class ParsedownAudio extends Parsedown {
                     'name' => 'audio',
                     'attributes' => [
                         'controls' => 'controls',
-                        'src' => 'posts/' . $matches[1], // Ensure the path points to your posts folder
+                        'src' => 'posts/' . $matches[1],
                     ],
+                    // Adding this tells Parsedown the element is self-closing 
+                    // and to keep processing the rest of the content
+                    'text' => '', 
                 ],
             ];
         }
@@ -35,29 +37,9 @@ $path = realpath($post_dir . $file); // make the path from the directory and fil
 // Verify the file exists and is inside the posts folder
 if ($path && strpos($path, $post_dir) === 0 && file_exists($path)) {
     $markdown = file_get_contents($path);
-    $parts = explode('---', $markdown);
-
-    // Case 1: Standard YAML (--- info --- content)
+    $parts = explode('---', $markdown, 3);
     if (count($parts) >= 3) {
         $markdown = trim($parts[2]);
-    } 
-    // Case 2: Only one separator (--- info [everything else])
-    elseif (count($parts) == 2) {
-        // We need to split the metadata from the content
-        // Since there's no closing ---, we look for the first newline after the dashes
-        $contentParts = explode("\n", trim($parts[1]), 2);
-        
-        // We skip the first few lines of YAML and take the rest
-        // Or more safely, just look for the first '#' which starts your Markdown
-        $markdown = trim(strstr($parts[1], '#')); 
-
-        if (empty($markdown)) {
-            $markdown = trim($parts[1]); // Fallback if no # header found
-        }
-
-        if (!empty(trim($parts[0]))) {
-            $markdown = file_get_contents($path);
-        }
     }
 
 ?>
