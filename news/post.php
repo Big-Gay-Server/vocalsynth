@@ -43,12 +43,20 @@ if ($path && strpos($path, $post_dir) === 0 && file_exists($path)) {
     } 
     // Case 2: Only one separator (--- info [everything else])
     elseif (count($parts) == 2) {
-        $markdown = trim($parts[1]);
+        // We need to split the metadata from the content
+        // Since there's no closing ---, we look for the first newline after the dashes
+        $contentParts = explode("\n", trim($parts[1]), 2);
         
-        // Safety check: if the first part wasn't empty, 
-        // the dashes were likely in the middle of the text, not at the top.
+        // We skip the first few lines of YAML and take the rest
+        // Or more safely, just look for the first '#' which starts your Markdown
+        $markdown = trim(strstr($parts[1], '#')); 
+
+        if (empty($markdown)) {
+            $markdown = trim($parts[1]); // Fallback if no # header found
+        }
+
         if (!empty(trim($parts[0]))) {
-            $markdown = file_get_contents($path); 
+            $markdown = file_get_contents($path);
         }
     }
 
