@@ -1,11 +1,11 @@
 <div id="ust-container">
     <!-- Header Row -->
     <div class="ust-header">
-        <div><h3>download</h3></div>
-        <div><h3>song name</h3></div>
-        <div><h3>original artist</h3></div>
-        <div><h3>format/lang</h3></div>
-        <div><h3>date</h3></div>
+        <div><h4>download</h4></div>
+        <div><h4>song name</h4></div>
+        <div><h4>original artist</h4></div>
+        <div><h4>format/lang</h4></div>
+        <div><h4>date</h4></div>
     </div>
 
     <?php 
