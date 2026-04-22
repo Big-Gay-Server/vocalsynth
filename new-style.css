@@ -392,8 +392,8 @@ button {
     padding-left: 10px;
     filter: drop-shadow(4px 4px 4px rgb(0, 0, 0, 0.46));
     text-transform: uppercase;
+    color: #cf82e8;
     &:link, &:visited, &:active {
-        color: #cf82e8;
         text-decoration: none !important;
         cursor: pointer;
     }
