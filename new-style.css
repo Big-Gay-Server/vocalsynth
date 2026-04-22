@@ -320,6 +320,7 @@ a {
 }
 
 #ust-table tbody tr {
+    margin: 10px;
     background-color: #1f033849;
     border-radius: 20px;
     padding: 10px;
