@@ -3,12 +3,12 @@ require_once __DIR__ . '/Parsedown.php';
 
 class ParsedownAudio extends Parsedown {
     public function __construct() {
-        // Tell Parsedown to look for ! as a starting character
-        $this->InlineTypes['!'][] = 'AudioLink';
-        $this->inlineMarkerList .= '!';
+        // Add "Audio" to the list of things Parsedown looks for when it sees "!"
+        // This keeps the original "Image" logic intact too.
+        $this->InlineTypes['!'][] = 'Audio';
     }
 
-    protected function inlineAudioLink($Excerpt) {
+    protected function inlineAudio($Excerpt) {
         // Look for the ![[filename.wav]] pattern
         if (preg_match('/^!\[\[(.+\.(wav|mp3|ogg))\]\]/', $Excerpt['text'], $matches)) {
             return [
@@ -17,7 +17,7 @@ class ParsedownAudio extends Parsedown {
                     'name' => 'audio',
                     'attributes' => [
                         'controls' => 'controls',
-                        'src' => $matches[1],
+                        'src' => 'posts/' . $matches[1], // Ensure the path points to your posts folder
                     ],
                 ],
             ];
