@@ -354,7 +354,7 @@ a {
     50% { transform: scale3d(1.025, 1.025, 1.025); }
 }
 
-button {
+/* button {
     padding: 0.5rem 2rem;
     border: none;
     font-size: 1.25rem;
@@ -376,6 +376,34 @@ button {
     }
     @media(min-width: 600px) {
         width: auto;
+    }
+} */
+
+button {
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    list-style-type: none;
+    background: #350c5cCC;
+    line-height: 20px;
+    padding: 4px;
+    letter-spacing: 4px;
+    margin-right: 10px;
+    padding-left: 10px;
+    filter: drop-shadow(4px 4px 4px rgb(0, 0, 0, 0.46));
+    text-transform: uppercase;
+    &:link, &:visited, &:active {
+        color: #cf82e8;
+        text-decoration: none !important;
+        cursor: pointer;
+    }
+    &:hover {
+        background: #9030b0;
+        color: #cf82e8;
+        animation: pulse 1s;
+        cursor: pointer;
+        letter-spacing: 6px;
+        text-decoration: none !important;
     }
 }
 
