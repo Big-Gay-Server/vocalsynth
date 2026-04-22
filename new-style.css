@@ -315,36 +315,58 @@ a {
     margin: 0 auto;
 }
 
-/* Apply flex to both header and body rows */
-#ust-table thead tr, 
-#ust-table tbody tr {
-    display: flex;
+#ust-container {
     width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-/* Force each "column" to have a specific width so they line up */
-/* Adjust these percentages to fit your text */
-#ust-table th:nth-child(1), #ust-table td:nth-child(1) { width: 20%; } /* Download */
-#ust-table th:nth-child(2), #ust-table td:nth-child(2) { width: 25%; } /* Song Name */
-#ust-table th:nth-child(3), #ust-table td:nth-child(3) { width: 25%; } /* Original Artist */
-#ust-table th:nth-child(4), #ust-table td:nth-child(4) { width: 15%; } /* format */
-#ust-table th:nth-child(5), #ust-table td:nth-child(5) { width: 15%; } /* Date */
+/* Header Alignment */
+.ust-header, .ust-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+}
 
-#ust-table tbody tr {
-    margin-bottom: 15px;
+.ust-header div, .ust-row > div {
+    flex: 1; /* This makes columns auto-resize evenly */
+}
+
+/* Specific Width Adjustments (Optional) */
+.col-dl { flex: 0 0 100px !important; } 
+
+/* The Row Card Style */
+.ust-row {
     background-color: #1f033849;
-    border-radius: 20px;
-    padding: 10px;
     border: 1px solid #62a8d3;
-    filter: drop-shadow(4px 4px 4px rgb(0, 0, 0, 0.486));
-    box-sizing: border-box;
-    transition: background 0.3s, filter 0.3s;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
 }
 
-#ust-table tbody tr:hover {
+/* Hover & Animation */
+.ust-row:hover {
     background: #350c5c;
-    filter: drop-shadow(0px 0px 8px #b98029);
-    animation: pulse 1s ease-in;
+    border-color: #b98029;
+    filter: drop-shadow(0px 0px 10px #b98029);
+    animation: pulse 0.5s infinite alternate ease-in-out;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.02); }
+}
+
+/* Button Styling */
+.ustdl-btn {
+    background: #62a8d3;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 12px;
+    color: white;
     cursor: pointer;
 }
 
