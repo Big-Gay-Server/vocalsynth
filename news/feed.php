@@ -1,8 +1,17 @@
 <?php
 header('Content-Type: application/xml; charset=utf-8');
 $site_url = 'https://vocalsynth.lunarconstruct.net';
-$dir = './posts/';
+
 require_once __DIR__ . '/../includes/functions.php'; // Fixed path to your autoloader
+require_once __DIR__ . '/../includes/covermanager.php';
+
+$postdir = './posts/';
+$covermanager = new CoverManager();
+
+$default_filters = [
+    'requireVideo' => true,
+    'minYear' => 2016,
+];
 
 echo '<?xml version="1.0" encoding="UTF-8" ?>';
 ?>
@@ -15,7 +24,8 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>';
     require_once 'Parsedown.php';
     $Parsedown = new Parsedown();
 
-    $files = glob($dir . '*.{html,md}', GLOB_BRACE);
+    $posts = glob($postdir . '*.{html,md}', GLOB_BRACE);
+    $covers = $covermanager->getCovers($default_filters);
 
     $all_posts = [];
     foreach ($files as $file) {
@@ -48,6 +58,7 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>';
             }
 
             $all_posts[] = [
+                'type' => 'news',
                 'filename' => basename($file),
                 'timestamp' => $timestamp,
                 'yaml' => $yaml,
@@ -56,37 +67,47 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>';
         }
     }
 
+    $cover_posts = [];
+    foreach ($covers as $raw_cover) {
+        // Process the cover data using your helper
+        $processed = $covermanager->processCoverData($raw_cover);
+        
+        $cover_posts[] = [
+            'type' => 'cover', // Add this indicator
+            'timestamp' => strtotime($raw_cover['date'] ?? 'now'),
+            'title' => $processed['title'],
+            'link' => $site_url . '/covers/?song=' . $processed['url_slug'],
+            'description' => "New Cover: " . $processed['title'] . " ft. " . $processed['byline']
+        ];
+    }
+
+    $merged_feed = array_merge($all_posts, $cover_posts);
+
     // Sort by newest first
-    usort($all_posts, function ($a, $b) {
+    usort($merged_feed, function ($a, $b) {
         return $b['timestamp'] - $a['timestamp'];
     });
 
-    foreach ($all_posts as $post) {
-      $body = $post['body'];
-      $yaml = $post['yaml'];
-      $date = date(DATE_RSS, $post['timestamp']);
-      $filename = $post['filename'];
+    foreach ($merged_feed as $item) {
+        $title = $item['title'];
+        
+        // Add the indicator based on type
+        if ($item['type'] === 'cover') {
+            $title = "🎵 [COVER] " . $title;
+            $link = $item['link'];
+            $description = htmlspecialchars($item['description']);
+        } else {
+            // ... use your existing News title/link/description logic ...
+            $title = "📰 [NEWS] " . $title; 
+        }
 
-      // 1. Title Priority: YAML > # Header > Filename
-      if (!empty($yaml['title'])) {
-          $title = htmlspecialchars($yaml['title']);
-      } elseif (preg_match('/^#+\s+(.+)$/m', $body, $matches)) {
-          $title = htmlspecialchars($matches[1]);
-      } else {
-          $title = ucwords(str_replace(['.html', '.md', '_', '-'], ['', '', ' ', ' '], $filename));
-      }
-
-      $clean_name = str_replace(['.md', '.html'], '', $filename);
-      $link = $site_url . '/news/' . $clean_name;
-
-      // Clean for preview using the body only
-      $html_content = $Parsedown->text($body);
-      $plain_text = strip_tags($html_content);
-      $clean_preview = str_replace(["\r", "\n"], ' ', $plain_text);
-      $clean_preview = str_replace($title, '', $clean_preview);
-      $description = htmlspecialchars(mb_substr(trim($clean_preview), 0, 200)) . '...';
-
-      echo "<item><title>$title</title><link>$link</link><description>$description</description><pubDate>$date</pubDate><guid>$link</guid></item>";
+        echo "<item>
+                <title>$title</title>
+                <link>$link</link>
+                <description>$description</description>
+                <pubDate>" . date(DATE_RSS, $item['timestamp']) . "</pubDate>
+                <guid>$link</guid>
+            </item>";
     }
     ?>
   </channel>
