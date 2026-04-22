@@ -2,7 +2,13 @@
 require_once __DIR__ . '/Parsedown.php';
 
 class ParsedownAudio extends Parsedown {
-    protected function inlineLink($Excerpt) {
+    public function __construct() {
+        // Tell Parsedown to look for ! as a starting character
+        $this->InlineTypes['!'][] = 'AudioLink';
+        $this->inlineMarkerList .= '!';
+    }
+
+    protected function inlineAudioLink($Excerpt) {
         // Look for the ![[filename.wav]] pattern
         if (preg_match('/^!\[\[(.+\.(wav|mp3|ogg))\]\]/', $Excerpt['text'], $matches)) {
             return [
@@ -16,7 +22,6 @@ class ParsedownAudio extends Parsedown {
                 ],
             ];
         }
-        return parent::inlineLink($Excerpt);
     }
 }
 
