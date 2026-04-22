@@ -9,7 +9,11 @@ $path = realpath($post_dir . $file); // make the path from the directory and fil
 
 // Verify the file exists and is inside the posts folder
 if ($path && strpos($path, $post_dir) === 0 && file_exists($path)) {
-    $markdown = file_get_contents($path); // get contents of requested post
+    $markdown = file_get_contents($path);
+    $parts = explode('---', $markdown, 3);
+    if (count($parts) >= 3) {
+        $markdown = trim($parts[2]);
+    }
 
 ?>
     <article class='blog-post' style='max-width: 900px; margin: auto;'>

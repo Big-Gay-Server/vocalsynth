@@ -1,3 +1,7 @@
+---
+public: false
+date: 2025-08-22
+---
 # 【UTAU カバー】 熱異常 / Heat abnormal 【Merisdae】
 
 <div class="video-container">

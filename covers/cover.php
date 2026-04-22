@@ -1,34 +1,33 @@
-<h1>【UTAU カバー】 <?= $cover_data['title'] ?> 【<?= $cover_data['voicebank'] ?>】</h1>
+<h2>【UTAU カバー】 <?= $cover_data['title'] ?> 【<?= $cover_data['voicebank'] ?>】</h2>
 <div class="video-container">
     <iframe src="<?= $cover_data['embed_url'] ?>" frameborder="0" allowfullscreen loading="lazy"></iframe>
 </div>
+<div class='description'>
+    <h3>"<?= $cover_data['raw']['lyric for desc'] ?? '' ?>"</h3>
+    <p><?= $cover_data['raw']['comments'] ?? '' ?></p>
+</div>
 <div class='credits'>
     <h3> ⦅ CREDITS ⦆ </h3>
-    <li> <b>SONG:</b> <?= $cover_data['title'] ?>
-    <li> <b>MUSIC & LYRICS:</b>
-        <?php
-        $ml = $cover_data['raw']['music & lyrics'] ?? 'N/A';
-        echo htmlspecialchars(is_array($ml) ? implode(', ', $ml) : $ml);
-        ?>
-    <li> <b>ORIGINAL:</b>
-        <?php
-        $og = $cover_data['raw']['original vocals'] ?? 'N/A';
-        echo htmlspecialchars(is_array($og) ? implode(', ', $og) : $og);
-        ?>
-    <li> <b>UTAU:</b> <?= $cover_data['vb_display'] ?>
-    <li> <b>UST:</b>
-        <?php
-        $ust = $cover_data['raw']['UST'] ?? 'N/A';
-        echo htmlspecialchars(is_array($ust) ? implode(', ', $ust) : $ust);
-        ?>
-    <li> <b>TUNING:</b>
-        <?php
-        $tn = $cover_data['raw']['tuning'] ?? 'N/A';
-        echo htmlspecialchars(is_array($tn) ? implode(', ', $tn) : $tn);
-        ?>
-    <li> <b>MIX:</b>
-        <?php
-        $mix = $cover_data['raw']['mix'] ?? 'N/A';
-        echo htmlspecialchars(is_array($mix) ? implode(', ', $mix) : $mix);
-        ?>
+
+    <?php
+    $fields = [
+        'SONG' => 'title',
+        'MUSIC & LYRICS' => 'artist',
+        'ORIGINAL' => 'ogvo',
+        'UTAU' => 'vb_display',
+        'UST' => 'ust',
+        'TUNING' => 'tuning',
+        'MIX' => 'mix',
+        'MOVIE' => 'movie',
+        'ILLUST' => 'illust',
+    ];
+
+    echo '<ul>';
+    foreach ($fields as $label => $key):
+        if (!empty($cover_data[$key])): ?>
+            <li> <b><?= $label ?>:</b> <?= $cover_data[$key] ?> </li>
+        <?php endif;
+    endforeach; ?>
+    </ul>
+
 </div>

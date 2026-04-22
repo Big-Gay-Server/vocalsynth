@@ -1,0 +1,14 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.folder == "news/posts"
+        - file.ext != "base"
+    order:
+      - file.name
+      - public
+      - date
+    sort:
+      - property: date
+        direction: DESC

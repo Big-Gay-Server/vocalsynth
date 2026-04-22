@@ -1,3 +1,7 @@
+---
+public: true
+date: 2025-08-16
+---
 # 【UTAU VOICEBANK RELEASE】 SEAHOLLY 【Merisdae -NEW PHASE-】 
 
 <div class="video-container">

@@ -1,3 +1,7 @@
+---
+public: false
+date: 2025-09-01
+---
 ## 【UTAU カバー】 私は雨 / I am the Rain 【Canelé】
 
 <div class="video-container">

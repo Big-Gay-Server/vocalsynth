@@ -154,7 +154,8 @@ class CoverManager {
         $vb_array = is_array($vb_data) ? $vb_data : [$vb_data];
         $vb_links = [];
         foreach ($vb_array as $vb_item) {
-            $link = $this->vb_map[strtolower(trim($vb_item))] ?? '';
+            $clean_key = $this->clean($vb_item); 
+            $link = $this->vb_map[$clean_key] ?? '';
             $vb_links[] = $link ? '<a href="' . $link . '">' . htmlspecialchars($vb_item) . '</a>' : htmlspecialchars($vb_item);
         }
 
@@ -168,14 +169,28 @@ class CoverManager {
         $video_link = is_array($raw_video) ? ($raw_video[0] ?? '') : $raw_video;
         $embed_url = preg_replace("/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([^\s&]+)/", "https://youtube.com/embed/$1", $video_link);
 
+        // ust
+        $ust = is_array($coverdata['UST'] ?? '') ? implode(', ', $coverdata['UST']) : ($coverdata['UST'] ?? '');
+        $tuning = is_array($coverdata['tuning'] ?? '') ? implode(', ', $coverdata['tuning']) : ($coverdata['tuning'] ?? '');
+        $mix = is_array($coverdata['mix'] ?? '') ? implode(', ', $coverdata['mix']) : ($coverdata['mix'] ?? '');
+        $movie = is_array($coverdata['movie'] ?? '') ? implode(', ', $coverdata['movie']) : ($coverdata['movie'] ?? '');
+        $illust = is_array($coverdata['illust'] ?? '') ? implode(', ', $coverdata['illust']) : ($coverdata['illust'] ?? '');
+
         // Return a nice, clean object
         return [
             'title' => $full_title,
             'url_slug' => urlencode($romname ?: $origname),
             'date' => $date,
             'vb_display' => implode(', ', $vb_links),
-            'voicebank' => implode(', ', $vb_data),
+            'voicebank' => implode(', ', $vb_array),
+            'artist' => $artist,
+            'ogvo' => $ogvo,
             'byline' => $byline,
+            'ust' => $ust,
+            'tuning' => $tuning,
+            'mix' => $mix,
+            'movie' => $movie,
+            'illust' => $illust,
             'embed_url' => $embed_url,
             'file_path' => $coverdata['file_path'] ?? '',
             'raw' => $coverdata // keep the original just in case
@@ -193,7 +208,7 @@ class CoverManager {
                         <iframe src="<?= $cover['embed_url'] ?>" frameborder="0" allowfullscreen loading="lazy"></iframe>
                     </div>
                 <?php endif; ?>
-                <a href="?song=<?= $cover['url_slug'] ?>"><h3><?= htmlspecialchars($cover['title']) ?></h3></a>
+                <a href="/covers?song=<?= $cover['url_slug'] ?>"><h3><?= htmlspecialchars($cover['title']) ?></h3></a>
                 <h4><?= $cover['vb_display'] ?></h4>
                 <h5><?= htmlspecialchars($cover['byline']) ?></h5>
                 <h6><?= htmlspecialchars($cover['date']) ?></h6>
