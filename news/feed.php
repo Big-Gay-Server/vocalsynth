@@ -75,7 +75,8 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>';
         $cover_posts[] = [
             'type' => 'cover', // Add this indicator
             'timestamp' => strtotime($raw_cover['date'] ?? 'now'),
-            'title' => "【UTAU カバー】 " . $processed['title'] . "【" . $processed['vb_display'] . "】",
+            'title' => $processed['title'],
+            'voicebank' => $processed['vb_display'],
             'link' => $site_url . '/covers?song=' . $processed['url_slug'],
             'description' => "New Cover: " . $processed['title'] . " ft. " . $processed['vb_display']
         ];
@@ -92,7 +93,7 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>';
         $date = date(DATE_RSS, $item['timestamp']);
         
         if ($item['type'] === 'cover') {
-            $title = "🎵 [COVER] " . $item['title'];
+            $title = "【UTAU カバー】 " . $item['title'] . "【" . $item['voicebank'] . "】";
             $link = $item['link'];
             $description = htmlspecialchars($item['description']);
         } else {
