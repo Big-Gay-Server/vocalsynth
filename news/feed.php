@@ -97,7 +97,29 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>';
             $link = $item['link'];
             $description = htmlspecialchars($item['description']);
         } else {
-            // ... use your existing News title/link/description logic ...
+            $body = $post['body'];
+            $yaml = $post['yaml'];
+            $date = date(DATE_RSS, $post['timestamp']);
+            $filename = $post['filename'];
+
+            // 1. Title Priority: YAML > # Header > Filename
+            if (!empty($yaml['title'])) {
+                $title = htmlspecialchars($yaml['title']);
+            } elseif (preg_match('/^#+\s+(.+)$/m', $body, $matches)) {
+                $title = htmlspecialchars($matches[1]);
+            } else {
+                $title = ucwords(str_replace(['.html', '.md', '_', '-'], ['', '', ' ', ' '], $filename));
+            }
+
+            $clean_name = str_replace(['.md', '.html'], '', $filename);
+            $link = $site_url . '/news/' . $clean_name;
+
+            // Clean for preview using the body only
+            $html_content = $Parsedown->text($body);
+            $plain_text = strip_tags($html_content);
+            $clean_preview = str_replace(["\r", "\n"], ' ', $plain_text);
+            $clean_preview = str_replace($title, '', $clean_preview);
+            $description = htmlspecialchars(mb_substr(trim($clean_preview), 0, 200)) . '...';
             $title = "📰 [NEWS] " . $title; 
         }
 
