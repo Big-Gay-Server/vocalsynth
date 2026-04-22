@@ -1,6 +1,26 @@
 <?php
 require_once __DIR__ . '/Parsedown.php';
-$Parsedown = new Parsedown();
+
+class ParsedownAudio extends Parsedown {
+    protected function inlineLink($Excerpt) {
+        // Look for the ![[filename.wav]] pattern
+        if (preg_match('/^!\[\[(.+\.(wav|mp3|ogg))\]\]/', $Excerpt['text'], $matches)) {
+            return [
+                'extent' => strlen($matches[0]),
+                'element' => [
+                    'name' => 'audio',
+                    'attributes' => [
+                        'controls' => 'controls',
+                        'src' => $matches[1],
+                    ],
+                ],
+            ];
+        }
+        return parent::inlineLink($Excerpt);
+    }
+}
+
+$Parsedown = new ParsedownAudio();
 
 $post_dir = __DIR__ . '/posts/'; // set folder the posts are in
 $file = $_GET['f'] ?? ''; // get the requested post from url and set it as $file
