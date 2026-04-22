@@ -372,7 +372,6 @@ button {
     padding: 0;
     & li {
         margin-bottom: 1.25rem;
-        border-bottom: 1px dashed #62a8d3;
         padding-bottom: 1rem;
     }
 }
