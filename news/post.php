@@ -35,9 +35,21 @@ $path = realpath($post_dir . $file); // make the path from the directory and fil
 // Verify the file exists and is inside the posts folder
 if ($path && strpos($path, $post_dir) === 0 && file_exists($path)) {
     $markdown = file_get_contents($path);
-    $parts = explode('---', $markdown, 3);
+    $parts = explode('---', $markdown);
+
+    // Case 1: Standard YAML (--- info --- content)
     if (count($parts) >= 3) {
         $markdown = trim($parts[2]);
+    } 
+    // Case 2: Only one separator (--- info [everything else])
+    elseif (count($parts) == 2) {
+        $markdown = trim($parts[1]);
+        
+        // Safety check: if the first part wasn't empty, 
+        // the dashes were likely in the middle of the text, not at the top.
+        if (!empty(trim($parts[0]))) {
+            $markdown = file_get_contents($path); 
+        }
     }
 
 ?>
