@@ -352,7 +352,7 @@ a {
     background: #350c5c;
     border-color: #b98029;
     filter: drop-shadow(0px 0px 10px #b98029);
-    animation: pulse 0.5s infinite alternate ease-in-out;
+    animation: pulse 0.5s ease-in-out;
 }
 
 @keyframes pulse {
@@ -361,14 +361,14 @@ a {
 }
 
 /* Button Styling */
-.ustdl-btn {
+/* .ustdl-btn {
     background: #62a8d3;
     border: none;
     border-radius: 10px;
     padding: 8px 12px;
     color: white;
     cursor: pointer;
-}
+} */
 
 @keyframes pulse {
     0%, 100% { transform: scale3d(1, 1, 1); }
