@@ -89,45 +89,43 @@ echo '<?xml version="1.0" encoding="UTF-8" ?>';
     });
 
     foreach ($merged_feed as $item) {
-        $title = $item['title'];
+        $date = date(DATE_RSS, $item['timestamp']);
         
-        // Add the indicator based on type
         if ($item['type'] === 'cover') {
-            $title = "🎵 [COVER] " . $title;
+            $title = "🎵 [COVER] " . $item['title'];
             $link = $item['link'];
             $description = htmlspecialchars($item['description']);
         } else {
-            $body = $post['body'];
-            $yaml = $post['yaml'];
-            $date = date(DATE_RSS, $post['timestamp']);
-            $filename = $post['filename'];
+            // Fix: Use $item instead of $post
+            $body = $item['body'];
+            $yaml = $item['yaml'];
+            $filename = $item['filename'];
 
-            // 1. Title Priority: YAML > # Header > Filename
+            // Title logic (keep your priority logic)
             if (!empty($yaml['title'])) {
-                $title = htmlspecialchars($yaml['title']);
+                $postTitle = $yaml['title'];
             } elseif (preg_match('/^#+\s+(.+)$/m', $body, $matches)) {
-                $title = htmlspecialchars($matches[1]);
+                $postTitle = $matches[1];
             } else {
-                $title = ucwords(str_replace(['.html', '.md', '_', '-'], ['', '', ' ', ' '], $filename));
+                $postTitle = ucwords(str_replace(['.html', '.md', '_', '-'], ['', '', ' ', ' '], $filename));
             }
 
+            $title = "📰 [NEWS] " . htmlspecialchars($postTitle);
             $clean_name = str_replace(['.md', '.html'], '', $filename);
             $link = $site_url . '/news/' . $clean_name;
 
-            // Clean for preview using the body only
+            // Preview logic
             $html_content = $Parsedown->text($body);
             $plain_text = strip_tags($html_content);
             $clean_preview = str_replace(["\r", "\n"], ' ', $plain_text);
-            $clean_preview = str_replace($title, '', $clean_preview);
             $description = htmlspecialchars(mb_substr(trim($clean_preview), 0, 200)) . '...';
-            $title = "📰 [NEWS] " . $title; 
         }
 
         echo "<item>
                 <title>$title</title>
                 <link>$link</link>
                 <description>$description</description>
-                <pubDate>" . date(DATE_RSS, $item['timestamp']) . "</pubDate>
+                <pubDate>$date</pubDate>
                 <guid>$link</guid>
             </item>";
     }
