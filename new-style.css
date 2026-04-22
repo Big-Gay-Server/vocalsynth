@@ -319,7 +319,7 @@ a {
     text-align: center;
 }
 
-#ust-table tr {
+#ust-table tbody tr {
     background-color: #1f033849;
     border-radius: 20px;
     padding: 10px;
