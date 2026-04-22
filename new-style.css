@@ -381,6 +381,7 @@ a {
 
 button {
     border-radius: 10px;
+    border: none;
     padding: 5px;
     margin: 5px;
     list-style-type: none;
