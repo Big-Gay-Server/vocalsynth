@@ -341,6 +341,16 @@ a {
     border-radius: 0 20px 20px 0;
 }
 
+@keyframes pulse {
+    0%, 100% { transform: scale3d(1, 1, 1); }
+    50% { transform: scale3d(1.05, 1.05, 1.05); }
+}
+
+#ust-table tbody tr:hover {
+    display: block; 
+    animation: pulse 0.5s ease-in-out;
+}
+
 button {
     padding: 0.5rem 2rem;
     border: none;
@@ -363,16 +373,6 @@ button {
     }
     @media(min-width: 600px) {
         width: auto;
-    }
-}
-
-/* ANIMATIONS / UTILITIES */
-@keyframes pulse {
-    from {
-        transform: scale3d(1, 1, 1);
-    }
-    to {
-        transform: scale3d(1.05, 1.05, 1.05);
     }
 }
 
