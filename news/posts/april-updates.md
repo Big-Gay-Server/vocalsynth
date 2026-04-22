@@ -8,21 +8,21 @@ this is the first monthly update post!! i wanna just post the things i've been w
 and it really just aint that serious!!
 
 ### all i can see is u / あなたしか見えないの
-![[/news/posts/assets/allicanseeisu.wav]]
+![[assets/allicanseeisu.wav]]
 
 song: r-906 | ust: 匿名和菓子
 
 this one only has a little bit tuned ^^; i also cant figure out how to make the mix sound not . Bad but we'll get there at some point im sure.
 
 ### imperfection / インパーフェクション
-![[/news/posts/assets/imperfection.wav]]
+![[assets/imperfection.wav]]
 
 song: hitorie | ust: meee
 
 i made the ust on this one so even though its not tuned i'm putting the whole track in here cuz im very excited for this one jfdskjfsk i've been wanting to cover a hitorie song for a while but wasn't finding any instrumentals
 
 ### glow
-![[/news/posts/assets/glow.wav]]
+![[assets/glow.wav]]
 
 song: keeno | ust: ??
 
