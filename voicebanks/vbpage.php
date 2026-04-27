@@ -10,7 +10,7 @@ require_once 'index.php';
         <?= $currentvb['vbblurb'] ?>
     </div>
     <div class="column flex50">
-        <img class="columnimg" src="/voicebanks/<?= $urlchara ?>/<?= $currentvb['id'] ?>/key.png">HELLOTEST<br><br>
+        <img class="columnimg" src="/voicebanks/<?= $urlchara ?>/<?= $currentvb['id'] ?>/key.png"><br><br>
         <center>
             Key Art:
             <a href="<?= $currentvb['keyartistlink'] ?>">
