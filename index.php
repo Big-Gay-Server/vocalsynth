@@ -13,7 +13,7 @@ I've been working with Vocal Synthesis programs since around 2010! I mostly focu
 
 This site was entirely coded by me by hand, so please forgive any scuff! I am hoping for it to be fully mobile friendly very soon!!<br><br>
 
-Thanks for stopping by!!!
+Thanks for stopping by!!! test
 
 <br/>
 <br/>
