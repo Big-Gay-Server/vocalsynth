@@ -17,7 +17,9 @@
     </head>
     <body>
 
+        <?php include __DIR__ . '/config.php'; ?>
         <?php include __DIR__ . '/header.php'; ?>
+
 
         <div id="contentwrap">
 
