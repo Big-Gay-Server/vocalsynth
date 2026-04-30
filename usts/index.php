@@ -17,7 +17,7 @@
     <?php 
     require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/Spyc.php';
     
-    $ustsDir = glob(__DIR__ . '/downloads/*/', GLOB_ONLYDIR);
+    $ustsDir = glob(__DIR__ . '/downloads/*', GLOB_ONLYDIR);
     $sortedData = [];
 
     foreach ($ustsDir as $ust) {
