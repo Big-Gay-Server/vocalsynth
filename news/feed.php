@@ -2,6 +2,7 @@
 header('Content-Type: application/xml; charset=utf-8');
 $site_url = 'https://vocalsynth.lunarconstruct.net';
 
+require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../includes/functions.php'; // Fixed path to your autoloader
 require_once __DIR__ . '/../includes/covermanager.php';
 
