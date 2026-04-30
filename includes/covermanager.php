@@ -34,7 +34,7 @@ class CoverManager {
     // this part gets all the cover data from the yaml files
     public function getCovers(array $filters = []): array {
         $all_covers = [];
-        $folders = glob($_SERVER['DOCUMENT_ROOT'] . '/covers/mycovers/*/', GLOB_ONLYDIR);
+        $folders = glob('/usr/share/nginx/html/vocalsynth/covers/mycovers/*/', GLOB_ONLYDIR);
         
         foreach ($folders as $song_folder) {
             $files = glob($song_folder . '*.md');
@@ -155,7 +155,7 @@ class CoverManager {
         $vb_links = [];
         foreach ($vb_array as $vb_item) {
             $clean_key = $this->clean($vb_item); 
-            $link = $this->vb_map[$clean_key] ?? '';
+            $link = VOCALSYNTH_DOMAIN . $this->vb_map[$clean_key] ?? '';
             $vb_links[] = $link ? '<a href="' . $link . '">' . htmlspecialchars($vb_item) . '</a>' : htmlspecialchars($vb_item);
         }
 
@@ -208,7 +208,7 @@ class CoverManager {
                         <iframe src="<?= $cover['embed_url'] ?>" frameborder="0" allowfullscreen loading="lazy"></iframe>
                     </div>
                 <?php endif; ?>
-                <a href="/covers?song=<?= $cover['url_slug'] ?>"><h3><?= htmlspecialchars($cover['title']) ?></h3></a>
+                <a href="<?= VOCALSYNTH_DOMAIN . "/covers?song=" . $cover['url_slug'] ?>"><h3><?= htmlspecialchars($cover['title']) ?></h3></a>
                 <h4><?= $cover['vb_display'] ?></h4>
                 <h5><?= htmlspecialchars($cover['byline']) ?></h5>
                 <h6><?= htmlspecialchars($cover['date']) ?></h6>
