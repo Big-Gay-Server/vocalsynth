@@ -208,7 +208,7 @@ class CoverManager {
                         <iframe src="<?= $cover['embed_url'] ?>" frameborder="0" allowfullscreen loading="lazy"></iframe>
                     </div>
                 <?php endif; ?>
-                <a href="<?= VOCALSYNTH_DOMAIN . "/covers/?song=" . $cover['url_slug'] ?>"><h3><?= htmlspecialchars($cover['title']) ?></h3></a>
+                <a href="<?= VOCALSYNTH_DOMAIN . "/covers?song=" . $cover['url_slug'] ?>"><h3><?= htmlspecialchars($cover['title']) ?></h3></a>
                 <h4><?= $cover['vb_display'] ?></h4>
                 <h5><?= htmlspecialchars($cover['byline']) ?></h5>
                 <h6><?= htmlspecialchars($cover['date']) ?></h6>
